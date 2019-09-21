@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Milton Hotels</title>
+    <meta name="description" content="Milton Hotels">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <!-- putting header inside container will prevent full width navbar -->
+
+    <header>
+
+        <!--navbar creates a navigation bar -->
+        <!-- Colours https://getbootstrap.com/docs/4.0/utilities/colors/ -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+
+            <a class="navbar-brand text-light" href="#">
+                <img src="img/miltonlogo.png" width="30" height="30" class="d-inline-block align-top"
+                    alt="Milton Hotels Logo">
+                Milton Hotels
+            </a>
+
+            <!-- create a button for collapsing the menu -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- individual menu item-->
+                <a class="nav-item nav-link text-light active" href="#">About Us</a>
+
+                <!-- Dropdown using DIV -->
+
+                <div class="dropdown">
+                    <a class="nav-item nav-link text-light dropdown-toggle" data-toggle="dropdown" id="bookDropdown"
+                        aria-haspopup="true" aria-expanded="false" href="#">My Bookings</a>
+
+                    <div class="dropdown-menu" aria-labelledby="bookDropdown">
+                        <a class="dropdown-item text-light" href="#">Confirm Booking</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-light" href="#">Check Rewards</a>
+                    </div>
+
+                </div>
+
+                <!-- individual menu item-->
+                <a class="nav-item nav-link text-light" href="discounts.html">Offers</a>
+
+                <!-- right aligned menu items thanks to ml-auto -->
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <!-- text like phone number -->
+                        <span class="navbar-text text-light">1-800-MILTON</span>
+                    </li>
+                    <li class="nav-item">
+                        <!-- search box -->
+                        <form class="form-inline my-2 my-lg-0 ml-5">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-black btn btn-secondary btn-s my-0 ml-1"
+                                type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
+
+        </nav>
+        <!-- close nav -->
+
+        <!-- Hero / Banner Section -->
+        <!-- Scaling text: https://www.sitepoint.com/build-responsive-type-scale-bootstrap/ -->
+
+        <div class="jumbotron jumbotron-fluid card card-image" style="background-image: url(img/header.jpg);">
+            <div class="text-white text-center py-5 px-4">
+                <div>
+                    <h1 class="display-2">Welcome to Milton Hotels</h1>
+                    <p class="display-4 text-dark">You need a vacation!</p>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="container-fluid">
+
+        <main>
+
+            <section>
+
+                <div class="container">
+
+                    <div class="text-white text-center">
+                        <div>
+                            <p class="h1 text-dark mb-4">Why us?</p>
+                        </div>
+                    </div>
+
+                    <!-- CSS Grid -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <article>
+                                <h2>Beautiful locations</h2>
+                                <p>We have hotels in some of the best locations all around Australia:</p>
+                                <ul>
+                                    <li>Close to city center</li>
+                                    <li>Free shuttle service to Airport</li>
+                                    <li>Helpful staff</li>
+                                </ul>
+                            </article>
+
+                        </div>
+                        <div class="col-md-6">
+                            <article>
+                                <h2>Affordable selections</h2>
+                                <p>We have <span> great prices and offers </span> all year round!</p>
+                                <p>Click <a href="discounts.html">here</a> for more information.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Horizontal Rule -->
+                    <hr>
+
+                </div>
+
+                <article>
+                    <h3>Don't know where to go? This list might help!</h3>
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Top 10 Most Popular Tourist Destinations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bangkok</td>
+                                <td>20.05 million</td>
+                            </tr>
+                            <tr>
+                                <td>London</td>
+                                <td>19.83 million</td>
+                            </tr>
+                            <tr>
+                                <td>Paris</td>
+                                <td>17.44 million</td>
+                            </tr>
+                            <tr>
+                                <td>Dubai</td>
+                                <td>15.79 million</td>
+                            </tr>
+                            <tr>
+                                <td>Singapore</td>
+                                <td>13.91 million</td>
+                            </tr>
+                            <tr>
+                                <td>New York</td>
+                                <td>13.13 million</td>
+                            </tr>
+                            <tr>
+                                <td>Kuala Lumpur</td>
+                                <td>12.58 million</td>
+                            </tr>
+                            <tr>
+                                <td>Tokyo</td>
+                                <td>11.93 million</td>
+                            </tr>
+                            <tr>
+                                <td>Istanbul</td>
+                                <td>10.7 million</td>
+                            </tr>
+                            <tr>
+                                <td>Seoul</td>
+                                <td>9.54 million</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">
+                                    <p style="font-size:12px; text-align: center;">Source: <a
+                                            href="http://www.traveller.com.au/worlds-most-popular-cities-for-tourists-2018-named-h164d2"
+                                            target="_blank">Traveller.com</a></p>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </article>
+
+            </section>
+
+            <section>
+
+                <div class="text-dark text-center">
+                    <div>
+                        <p class="h3 text-dark mb-4">Check out what these cities have to offer!</p>
+                    </div>
+                </div>
+
+                <div class="card-deck">
+
+                    <div class="card">
+                        <img class="card-img-top" src="img/brisbane.jpg" alt="Card image">
+                        <div class="card-body">
+                            <h4 class="card-title">Brisbane</h4>
+                            <p class="card-text">As the capital of the Sunshine State, we are blessed with idyllic
+                                subtropical weather
+                                all year
+                                round.
+                                With award-winning food and wine, a jam-packed events calendar, adventurous
+                                activities, scenic
+                                weekend
+                                getaways and plenty to explore all over the city, there's always something to do.</p>
+                        </div>
+                        <div class="card-footer"><a href="#" class="btn btn-primary">Details</a></div>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="img/sydney.jpg" alt="Card image">
+                        <div class="card-body">
+                            <h4 class="card-title">Sydney</h4>
+                            <p class="card-text">From splendid Sydney Harbour, idyllic beaches and great national parks,
+                                to the
+                                marvellous
+                                creativity
+                                of
+                                the Sydney Opera House, dazzling entertainment and fascinating heritage, discover
+                                all the things
+                                to
+                                do
+                                and see throughout the year.</p>
+                        </div>
+                        <div class="card-footer"><a href="#" class="btn btn-primary">Details</a></div>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="img/melbourne.jpg" alt="Card image">
+                        <div class="card-body">
+                            <h4 class="card-title">Melbourne</h4>
+                            <p class="card-text">A packed agenda of food, wine, sports and arts is your introduction to
+                                the best of
+                                Melbourne –
+                                from
+                                its
+                                creative, exciting city centre, to its buzzing neighbourhood hubs. It's the gateway
+                                to
+                                Victoria's
+                                world-class wineries, natural springs, peninsulas, spectacular coastline and alpine
+                                villages.</p>
+                        </div>
+                        <div class="card-footer"><a href="#" class="btn btn-primary">Details</a></div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section>
+
+                <hr>
+
+                <div>
+                    <h2>Contact Us</h2>
+                </div>
+
+                <form method="post" id="indexcontactform">
+                    <!-- Actual form would have action="" -->
+                    <div class="form-group">
+                        <label for="contactName">Name</label>
+                        <input type="text" class="form-control" id="contactName" aria-describedby="nameHelp"
+                            placeholder="Enter your name.">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address</label>
+                        <input type="email" class="form-control" id="contactEmail" aria-describedby="emailHelp"
+                            placeholder="Enter your email address.">
+                        <small id="emailHelp" class="form-text text-muted">Your email address is safe with us.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+
+            </section>
+
+            <hr>
+
+            <section>
+
+                <!-- Alert implementation with close button to dismiss it -->
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>SALE ALERT! </strong>Book your vacation today and save 50% off airfare!.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <hr>
+
+                <!-- Badges -->
+
+                <h1>Notice Badge Size<span class="badge badge-secondary">Reflects Parent</span></h1>
+                <h3>Notice Badge Size<span class="badge badge-secondary">Reflects Parent</span></h3>
+
+                <br>
+
+                <button type="button" class="btn btn-primary">
+                    Updates <span class="badge badge-light">4</span>
+                </button>
+
+                <br>
+
+                <span class="badge badge-success">Success</span> <!-- Classes can be used to modify appearance -->
+
+                <br>
+
+                <span class="badge badge-pill badge-danger">Alert</span>
+                <!-- Classes can be used to modify appearance -->
+
+                <hr>
+
+                <!-- Carousel -->
+
+                <div id="carouseldemo" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouseldemo" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouseldemo" data-slide-to="1"></li>
+                        <li data-target="#carouseldemo" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/01.jpg" alt="beach day" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Beach Day</h5>
+                                <p>Wouldn't you like to be here?</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/02.jpg" alt="beach sunset" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Beach Sunset</h5>
+                                <p>What a way to end the day, right?</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/03.jpg" alt="beach hammock" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Beach Hammock</h5>
+                                <p>I feel like a nap, don't you?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel controls -->
+                    <a class="carousel-control-prev" href="#carouseldemo" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouseldemo" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <hr>
+
+                <!-- Modal -->
+
+                <div class="text-center">
+
+                    <!-- button to trigger modal -->
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modaldemo">
+                        Save
+                    </button>
+
+                    <div class="modal fade" id="modaldemo" tabindex="-1" role="dialog" aria-labelledby="modaldemoLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modaldemoLabel">Are you sure?</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Changes are permanent. There is no going back. You sure?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">Dismiss</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>Copyright &copy; Milton Hotels</p>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

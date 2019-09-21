@@ -1,0 +1,34 @@
+##Change directory to the folder that has the week7_orm code
+##start python command in the terminal - search for python.exe and run it
+
+
+from reservation import db, create_app
+from reservation.models_alchemy import Hotel, Room
+from flask_sqlalchemy import SQLAlchemy
+
+app=create_app()
+db=SQLAlchemy(app)
+
+ctx=app.app_context()
+ctx.push()
+
+#query all the hotels in the database
+Hotel.query.all()
+
+#query hotel with the name =Sydney
+Hotel.query.filter_by(name='Sydney').first()
+
+# get a list with that name
+Hotel.query.filter_by(name='Sydney').all()
+
+# Order by a field
+Hotel.query.order_by(Hotel.name).all()
+
+#Like query
+Hotel.query.filter(Hotel.name.like('Bris%')).all()
+
+#updating information from command line 
+standard_room=db.session.query(Room).filter_by(room_type='Standard').first()
+print(standard_room.price)
+standard_room.price=150
+db.session.commit()
