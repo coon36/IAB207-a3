@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Gamerverse: A peer-to-peer marketplace</title>
+    <meta name="description" content="Gamerverse: A peer-to-peer marketplace">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../CSS File/gamerversestyle.css">
+</head>
+
+<body>
+    <header>
+        <!-- Start of Jumbotron -->
+        <div class="jumbotron jumbotron-fluid card card-image text-white text-center"
+            style="background-image: url(../Images/heroimage.png);">
+            <h1 class="display-2">View Listing</h1>
+        </div>
+        <!-- End of Jumbotron -->
+
+        <!-- Start of Navigation Bar -->
+        <nav class="navbar navbar-expand-md bg-warning navbar-light">
+            <a class="navbar-brand" href="Homepage.html">&nbsp; Gamerverse</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar">
+                <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navBar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse By Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">View Transaction History</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">My Listings</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="CreateListing.html">Create New Listing</a>
+                            <a class="dropdown-item" href="ManageListing.html">Manage Listing</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Account</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Login/Register</a>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End of Navigation Bar -->
+        <br>
+    </header>
+
+    <div class="container-fluid">
+        <main>
+            <!-- Start of Search Bar -->
+            <section>
+                <form>
+                    <div class="row mb-4">
+                        <div class="form-group col-md-9">
+                            <input id="searchBarInput" type="email" placeholder="Search for your next video game..."
+                                class="form-control form-control-underlined">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <button type="submit"
+                                class="btn btn-warning rounded-pill btn-block shadow-sm">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <!-- End of Search Bar -->
+            <br>
+
+            <!-- Start of left card of View Listing page -->
+            <section>
+                <div class="card-deck">
+                    <article class="card">
+                        <img class="card-img-top" src="../Images/supersmashbrosultimate.jpg"
+                            alt="Super Smash Bros. Ultimate Game Image">
+                        <div class="card-body">
+                            <h4 class="card-title text-center text-secondary">Listing Details:<br></h4>
+                            <p class="card-text text-center">Date Listed: 30.08.2019<br> Listed By:
+                                briannahassett<br>Listing ID#3333</p>
+                        </div>
+                    </article>
+                    <!-- End of left card of View Listing page -->
+
+                    <!-- Start of right card of View Listing page -->
+                    <div class="card text-center">
+                        <h1 class="card-header text-secondary">Super Smash Bros. Ultimate (Preowned)<br>$84.00</h1>
+                        <div class="card-body">
+                            <p class="text-center"><strong><br>Price:</strong> $84.00<br><br>
+                                <hr>
+                                <strong>Description:</strong> Legendary game worlds and fighters collide in the ultimate
+                                showdown –
+                                a new entry in the Super Smash Bros. series for Nintendo Switch! New fighters,
+                                like Inkling from the Splatoon series and Ridley from the Metroid series, make their
+                                Super Smash Bros.
+                                series debut alongside every Super Smash Bros. fighter in the series…EVER! Faster
+                                combat, new items, new attacks,
+                                new defensive options and more will keep the battle raging whether you’re at home or on
+                                the go!<br><br>
+                                <hr>
+                                <strong>Condition Of Game:</strong> Preowned<br><br>
+                                <hr>
+                                <strong>Release Date:</strong> December 7, 2018<br><br>
+                                <hr>
+                                <strong>Genre:</strong> Action<br><br>
+                                <hr>
+                                <strong>Classification:</strong> PG<br><br>
+                                <hr>
+                                <strong>Platform:</strong> Nintendo Switch<br><br>
+                                <hr>
+                                <strong>Backwards Compatible:</strong> No<br><br>
+                                <hr>
+                                <strong>Availability:</strong> Available<br><br>
+                            </p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <div class="bidButton">
+                                <button type="button" class="btn btn-success text-dark" data-toggle="modal"
+                                    data-target="#confirmationModal">Bid Now</button>
+                            </div>
+                            <div class="bidButton">
+                                <a href="Homepage.html" role="button" class="btn btn-danger text-dark">Go Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </section>
+            <!-- End of right card of View Listing page -->
+
+
+            <!-- Start of modal for confirming the bid -->
+            <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
+                aria-labelledby="confirmationModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmationModal">Confirm Bid</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-center">Are you sure you want to make a bid of $84.00 on Super Smash Bros.
+                                Ultimate
+                                (Preowned)?<br><br></p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="Homepage.html" role="button" class="btn btn-success">Confirm Bid</a>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of modal for confirming the creation of the listing -->
+
+           <!-- Start of end of page Utility Links -->
+           <section>
+                <div class="utilityLinks">
+                    <a href="#">Contact Us</a>
+                    <a href="#">Help</a>
+                </div>
+            </section>
+            <!-- End of end of page Utility Links -->
+            <br>
+    </div>
+    </main>
+
+    <!-- Start of Copyright text -->
+    <footer>
+        <div class="p text-center">Copyright &copy 2019 Gamerverse</p>
+    </footer>
+    <!-- End of Copyright text -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

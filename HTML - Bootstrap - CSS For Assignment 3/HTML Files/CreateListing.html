@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Gamerverse: A peer-to-peer marketplace</title>
+    <meta name="description" content="Gamerverse: A peer-to-peer marketplace">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../CSS File/gamerversestyle.css">
+</head>
+
+<body>
+    <header>
+        <!-- Start of Jumbotron -->
+        <div class="jumbotron jumbotron-fluid card card-image text-white text-center"
+            style="background-image: url(../Images/heroimage.png);">
+            <h1 class="display-2">Create Listing</h1>
+        </div>
+        <!-- End of Jumbotron -->
+
+        <!-- Start of Navigation Bar -->
+        <nav class="navbar navbar-expand-md bg-warning navbar-light">
+            <a class="navbar-brand" href="Homepage.html">&nbsp; Gamerverse</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar">
+                <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navBar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse By Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">View Transaction History</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">My Listings</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="CreateListing.html">Create New Listing</a>
+                            <a class="dropdown-item" href="ManageListing.html">Manage Listing</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Account</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Login/Register</a>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End of Navigation Bar -->
+        <br>
+    </header>
+
+    <div class="container-fluid">
+        <main>
+            <!-- Start of Search Bar -->
+            <section>
+                <form>
+                    <div class="row mb-4">
+                        <div class="form-group col-md-9">
+                            <input id="searchBarInput" type="email" placeholder="Search for your next video game..."
+                                class="form-control form-control-underlined">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <button type="submit"
+                                class="btn btn-warning rounded-pill btn-block shadow-sm">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <!-- End of Search Bar -->
+            <br>
+
+            <!-- Start of Create Listing form -->
+            <section>
+                <div class="container py-3">
+                    <div class="row">
+                        <div class="mx-auto col-sm-12">
+                            <div class="card border-warning">
+                                <div class="card-header bg-warning border-warning">
+                                    <h4 class="mb-0 text-center text-secondary">Create A New Listing</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form class="form" role="form" autocomplete="off">
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Listing
+                                                Title:</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="text"
+                                                    placeholder="Enter listing title here">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Price:</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="text" placeholder="Enter price here">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label
+                                                class="col-lg-3 col-form-label form-control-label">Description:</label>
+                                            <div class="col-lg-9">
+                                                <textarea class="form-control" rows="5"
+                                                    placeholder="Enter description here"></textarea>
+                                            </div>
+                                        </div>
+                                        <fieldset>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 control-label">Condition Of Game:</label>
+                                                <div class="col-lg-9">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input id="radioButton" name="conditionRadioButton"
+                                                                value="option1" type="radio"> New</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input id="radioButton" name="conditionRadioButton"
+                                                                value="option1" type="radio"> Preowned</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Release
+                                                Date:</label>
+                                            <div class="col">
+                                                <select class="form-control" id="monthSelection">
+                                                    <option hidden>Select the month</option>
+                                                    <option>January</option>
+                                                    <option>February</option>
+                                                    <option>March</option>
+                                                    <option>April</option>
+                                                    <option>May</option>
+                                                    <option>June</option>
+                                                    <option>July</option>
+                                                    <option>August</option>
+                                                    <option>September</option>
+                                                    <option>October</option>
+                                                    <option>November</option>
+                                                    <option>December</option>
+                                                </select>
+                                            </div>
+                                            <div class="col">
+                                                <select class="form-control" id="daySelection">
+                                                    <option hidden>Select the day</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                    <option>13</option>
+                                                    <option>14</option>
+                                                    <option>15</option>
+                                                    <option>16</option>
+                                                    <option>17</option>
+                                                    <option>18</option>
+                                                    <option>19</option>
+                                                    <option>20</option>
+                                                    <option>21</option>
+                                                    <option>22</option>
+                                                    <option>23</option>
+                                                    <option>24</option>
+                                                    <option>25</option>
+                                                    <option>26</option>
+                                                    <option>27</option>
+                                                    <option>28</option>
+                                                    <option>29</option>
+                                                    <option>30</option>
+                                                    <option>31</option>
+                                                </select>
+                                            </div>
+                                            <div class="col">
+                                                <select class="form-control" id="yearSelection">
+                                                    <option hidden>Select the year</option>
+                                                    <option>2019</option>
+                                                    <option>2018</option>
+                                                    <option>2017</option>
+                                                    <option>2016</option>
+                                                    <option>2015</option>
+                                                    <option>2014</option>
+                                                    <option>2013</option>
+                                                    <option>2012</option>
+                                                    <option>2010</option>
+                                                    <option>2009</option>
+                                                    <option>2008</option>
+                                                    <option>2007</option>
+                                                    <option>2006</option>
+                                                    <option>2005</option>
+                                                    <option>2004</option>
+                                                    <option>2003</option>
+                                                    <option>2002</option>
+                                                    <option>2001</option>
+                                                    <option>2000</option>
+                                                    <option>1999</option>
+                                                    <option>1998</option>
+                                                    <option>1997</option>
+                                                    <option>1996</option>
+                                                    <option>1995</option>
+                                                    <option>1994</option>
+                                                    <option>1993</option>
+                                                    <option>1992</option>
+                                                    <option>1991</option>
+                                                    <option>1990</option>
+                                                    <option>1989</option>
+                                                    <option>1988</option>
+                                                    <option>1987</option>
+                                                    <option>1986</option>
+                                                    <option>1985</option>
+                                                    <option>1984</option>
+                                                    <option>1983</option>
+                                                    <option>1982</option>
+                                                    <option>1981</option>
+                                                    <option>1980</option>
+                                                    <option>1979</option>
+                                                    <option>1978</option>
+                                                    <option>1977</option>
+                                                    <option>1976</option>
+                                                    <option>1975</option>
+                                                    <option>1974</option>
+                                                    <option>1973</option>
+                                                    <option>1972</option>
+                                                    <option>1971</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Genre:</label>
+                                            <div class="col-lg-9">
+                                                <select class="form-control" id="genreSelection">
+                                                    <option hidden>Select the genre</option>
+                                                    <option>Action</option>
+                                                    <option>Action-Adventure</option>
+                                                    <option>Adventure</option>
+                                                    <option>Casual</option>
+                                                    <option>Party</option>
+                                                    <option>Role-Playing</option>
+                                                    <option>Simulation</option>
+                                                    <option>Strategy</option>
+                                                    <option>Sports</option>
+                                                    <option>MMO</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label
+                                                class="col-lg-3 col-form-label form-control-label">Classification:</label>
+                                            <div class="col-lg-9">
+                                                <select class="form-control" id="classificationSelection">
+                                                    <option hidden>Select the classification</option>
+                                                    <option>Exempt (E)</option>
+                                                    <option>General (G)</option>
+                                                    <option>Parental Guidance (PG)</option>
+                                                    <option>Mature (M)</option>
+                                                    <option>Mature Accompanied (MA)</option>
+                                                    <option>Restricted (R 18+)</option>
+                                                    <option>Restricted (X 18+)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Platform:</label>
+                                            <div class="col-lg-9">
+                                                <select class="form-control" id="platformSelection">
+                                                    <option hidden>Select the platform</option>
+                                                    <option>Arcade Systems</option>
+                                                    <option>Atari</option>
+                                                    <option>Commodore 64</option>
+                                                    <option>Nintendo</option>
+                                                    <option>Nintendo 3DS</option>
+                                                    <option>Nintendo DS</option>
+                                                    <option>Nintendo Switch</option>
+                                                    <option>Nintendo Wii</option>
+                                                    <option>Nintendo Wii U</option>
+                                                    <option>PC</option>
+                                                    <option>Playstation 3</option>
+                                                    <option>Playstation 4</option>
+                                                    <option>Playstation Classic</option>
+                                                    <option>Playstation Vita</option>
+                                                    <option>SEGA</option>
+                                                    <option>Xbox 360</option>
+                                                    <option>Xbox One</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <fieldset>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 control-label">Backwards Compatible?</label>
+                                                <div class="col-lg-9">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input id="radioButton" name="backwardsCompatibilityButton"
+                                                                value="option1" type="radio"> Yes</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input id="inlineradio1" name="backwardsCompatibilityButton"
+                                                                value="option1" type="radio"> No</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Upload
+                                                Image:</label>
+                                            <div class="col-lg-9">
+                                                <input type="file" class="form-control-file" id="imageUploader">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-9">
+                                                <div class="postButtons">
+                                                    <button type="button" class="btn btn-success text-dark"
+                                                        data-toggle="modal" data-target="#confirmationModal">Create
+                                                        Listing</button>
+                                                    <a href="Homepage.html" role="button"
+                                                        class="btn btn-danger text-dark">Cancel</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End of Create Listing form -->
+
+            <!-- Start of modal for confirming the creation of the listing -->
+            <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
+                aria-labelledby="confirmationModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmationModal">Confirm Creation of Listing</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-center">Are you sure you want to list this item?<br><br>
+                                Buyers will be able to bid on this listing as soon as it is posted.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="Homepage.html" class="btn btn-success text-dark" role="button">Post Listing</a>
+                            <button type="button" class="btn btn-danger text-dark" data-dismiss="modal">Go Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of modal for confirming the creation of the listing -->
+
+            <!-- Start of end of page Utility Links -->
+            <section>
+                <div class="utilityLinks">
+                    <a href="#">Contact Us</a>
+                    <a href="#">Help</a>
+                </div>
+            </section>
+            <!-- End of end of page Utility Links -->
+            <br>
+    </div>
+    </main>
+
+    <!-- Start of Copyright text -->
+    <footer>
+        <div class="p text-center">Copyright &copy 2019 Gamerverse</p>
+    </footer>
+    <!-- End of Copyright text -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
