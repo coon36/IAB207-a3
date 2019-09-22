@@ -1,4 +1,5 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
+
 
 bp = Blueprint('main', __name__)
 
@@ -6,3 +7,7 @@ bp = Blueprint('main', __name__)
 @bp.route('/')
 def index():
     return '<h1>Starter code for the assessment<h1>'
+
+@bp.route('/manageitems')
+def manage():
+    return render_template('manage.html')
