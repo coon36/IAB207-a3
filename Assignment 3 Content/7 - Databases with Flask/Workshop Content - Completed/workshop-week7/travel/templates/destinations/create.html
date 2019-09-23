@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+  <div class="container">
+
+    <!-- Flash messages --> 
+<!-- first get the messages so use with-->
+{% with messages = get_flashed_messages() %}
+{% if messages %} <!-- check if there are any messages -->
+  <div class="container">
+    <div class="row mt-3 mb-3">
+      <div class="col-md-12">
+      {% for message in messages %} <!--loop through the messages-->
+        <div class="alert alert-success">{{ message }}</div> <!--display as alert-->
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endwith %}
+
+    <div class="row mt-5">
+      <div class="col-md-12">
+
+        <h1>Add Travel Destination</h1>
+        <p>Enter a country that you will help clients travel to.</p>
+
+        {{wtf.quick_form(form)}}
+        
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

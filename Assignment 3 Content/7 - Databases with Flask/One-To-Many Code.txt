@@ -1,0 +1,36 @@
+##Change directory to the folder that has the week7_orm code
+##start python command in the terminal - search for python.exe and run it
+
+from reservation import db, create_app
+from reservation.models_alchemy import Hotel, Room
+from flask_sqlalchemy import SQLAlchemy
+
+app=create_app()
+db=SQLAlchemy(app)
+db.create_all()
+#check the database tables in the file using DB Broser
+
+
+#create some db objects
+hotel1=Hotel(name='Brisbane', image='brisbane.jpg', description='Hotel1 Lorem ipsum dore test')
+hotel2=Hotel(name='Sydney', image='sydney.jpg', description='Hotel2 some new hotel in sydney')
+room1=Room(room_type='Standard', price=200, num_rooms=10, description='An expensive room')
+room2=Room(room_type='Standard', price=120, num_rooms=20, description='Another standard room')
+
+#two different ways of setting the relationship between hotel and room objects
+#hotel has rooms which is a list - append the room object to the hotel rooms
+hotel1.rooms.append(room2)
+
+#each room has a hotel - set the hotel of the room
+room1.hotel=hotel2
+print(hotel1)
+print(room2)
+
+#commiting to the database
+db.session.add(hotel1)
+db.session.add(hotel2)
+db.session.commit()
+
+room3=Room(room_type='Triple', price=180, num_rooms=10, description='Double room', hotel_id=hotel1.id)
+db.session.add(room3)
+db.session.commit()
