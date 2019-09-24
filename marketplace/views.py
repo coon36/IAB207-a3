@@ -11,3 +11,7 @@ def index():
 @bp.route('/manageitems')
 def manage():
     return render_template('manage.html')
+
+@bp.route('/results')
+def result():
+    return render_template('result.html')
