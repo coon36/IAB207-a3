@@ -15,3 +15,8 @@ def manage():
 @bp.route('/results')
 def result():
     return render_template('result.html')
+
+
+@bp.route('/sellerhistory')
+def history():
+    return render_template('sellerhistory.html')
