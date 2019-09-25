@@ -1,23 +1,22 @@
 
 from flask_wtf import FlaskForm
-from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField
+from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordField
 from wtforms.validators import InputRequired, Length, Email, EqualTo
 
-
-#creates the login information
+#login form
 class LoginForm(FlaskForm):
-    user_name=StringField("User Name", validators=[InputRequired('Enter user name')])
-    password=PasswordField("Password", validators=[InputRequired('Enter user password')])
+    user_name=StringField("Username", validators=[InputRequired('Please enter your username.')])
+    password=PasswordField("Password", validators=[InputRequired('Please enter your password.')])
     submit = SubmitField("Login")
 
- # this is the registration form
+#registration form
 class RegisterForm(FlaskForm):
-    user_name=StringField("User Name", validators=[InputRequired()])
-    email_id = StringField("Email Address", validators=[Email("Please enter a valid email")])
+    user_name=StringField("Username", validators=[InputRequired('Please enter a username.')])
+    email_id = StringField("Email Address", validators=[Email("Please enter a valid email address.")])
     
     #linking two fields - password should be equal to data entered in confirm
-    password=PasswordField("Password", validators=[InputRequired(),
-                  EqualTo('confirm', message="Passwords should match")])
-    confirm = PasswordField("Confirm Password")
+    password=PasswordField("Password", validators=[InputRequired('Please enter a password.'),
+                  EqualTo('confirm', message="Passwords should match.")])
+    confirm = PasswordField("Please confirm your password.")
     #submit button
     submit = SubmitField("Register")
