@@ -20,3 +20,7 @@ def result():
 @bp.route('/sellerhistory')
 def history():
     return render_template('sellerhistory.html')
+
+@bp.route('/create')
+def create():
+    return render_template('CreateListing.html')
