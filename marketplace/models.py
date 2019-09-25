@@ -33,7 +33,7 @@ class Transaction(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     purchase_date = db.Column(db.Date, nullable=False)
-    price_paid = db.Column(db.Float, nulllable=False)
+    price_paid = db.Column(db.Float, nullable=False)
 
     #foreign keys are user_id and listing_id
     def __repr__(self):
@@ -45,7 +45,7 @@ class Listing(db.Model):
     __tablename__= 'Items'
     id = db.Column(db.Integer, primary_key=True)
     listing_title = db.Column(db.String(150), index=True)
-    purchase_price = db.Column(db.Float, nulllable=False)
+    purchase_price = db.Column(db.Float, nullable=False)
     date_posted = db.Column(db.Date, nullable=False)
     description = db.Column(db.String(250), nullable=False)
     availability_status = db.Column(db.String(64), nullable=False)
