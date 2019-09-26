@@ -48,7 +48,7 @@ def register():
             uname =form.user_name.data
             pwd = form.password.data
             email=form.email_id.data
-            account_creation_date = date.today();
+            account_creation_date = date.today()
             #check if a user exists
             u1 = User.query.filter_by(user_name=uname).first()
             if u1:

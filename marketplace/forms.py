@@ -13,7 +13,6 @@ class LoginForm(FlaskForm):
 class RegisterForm(FlaskForm):
     user_name=StringField("Username", validators=[InputRequired('Please enter a username.')])
     email_id = StringField("Email Address", validators=[Email("Please enter a valid email address.")])
-    
     #linking two fields - password should be equal to data entered in confirm
     password=PasswordField("Password", validators=[InputRequired('Please enter a password.'),
                   EqualTo('confirm', message="Passwords should match.")])

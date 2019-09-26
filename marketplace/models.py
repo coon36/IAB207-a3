@@ -65,7 +65,6 @@ class Listing(db.Model):
     game_classification = db.Column(db.String(64), nullable=False)
     game_platform = db.Column(db.String(64), nullable=False)
     game_genre = db.Column(db.String(64), nullable=False)
-    backwards_compatibility = db.Column(db.String(64), nullable=False)
     bid = db.relationship('Bid', backref='listing')
     transaction = db.relationship('Transaction', backref='listing')
 
