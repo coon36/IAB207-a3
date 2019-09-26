@@ -7,6 +7,7 @@ from .forms import LoginForm,RegisterForm
 from flask_login import login_user, login_required,logout_user
 from .models import User
 from . import db
+from datetime import date
 
 
 #create a blueprint
@@ -17,13 +18,13 @@ from werkzeug.security import generate_password_hash,check_password_hash
 
 @bp.route('/login', methods=['GET','POST'])
 def login():
-    login_form = LoginForm()
+    form = LoginForm()
     error=None
-    if(login_form.validate_on_submit()==True):
+    if(form.validate_on_submit()==True):
         #get the username and password from the database
-        user_name = login_form.user_name.data
-        password = login_form.password.data
-        u1 = User.query.filter_by(name=user_name).first()
+        user_name = form.user_name.data
+        password = form.password.data
+        u1 = User.query.filter_by(user_name=user_name).first()
         #if there is no user with that name
         if u1 is None:
             error='Incorrect user name'
@@ -36,36 +37,38 @@ def login():
             return redirect(url_for('main.index'))
         else:
             flash(error)
-    return render_template('user.html', form=login_form, heading='Login')
+    return render_template('user.html', form= form, heading='Login')
 
 @bp.route('/register', methods=['GET','POST'])
 def register():
-    register = RegisterForm()
+    form = RegisterForm()
     #the validation of form submis is fine
-    if (register.validate_on_submit() == True):
+    if (form.validate_on_submit() == True):
             #get username, password and email from the form
-            uname =register.user_name.data
-            pwd = register.password.data
-            email=register.email_id.data
+            uname =form.user_name.data
+            pwd = form.password.data
+            email=form.email_id.data
+            account_creation_date = date.today();
             #check if a user exists
-            u1 = User.query.filter_by(name=uname).first()
+            u1 = User.query.filter_by(user_name=uname).first()
             if u1:
                 flash('User name already exists, please login')
                 return redirect(url_for('auth.login'))
             # don't store the password - create password hash
             pwd_hash = generate_password_hash(pwd)
             #create a new user model object
-            new_user = User(name=uname, password_hash=pwd_hash, emailid=email)
+            new_user = User(user_name=uname, password_hash=pwd_hash, email_id=email, account_creation_date = account_creation_date)
             db.session.add(new_user)
             db.session.commit()
             #commit to the database and redirect to HTML page
             return redirect(url_for('main.index'))
     #the else is called when there is a get message
     else:
-        return render_template('user.html', form=register, heading='Register')
+        return render_template('user.html', form=form, heading='Register')
 
 
 
 @bp.route('/logout')
 def logout():
-    pass
+    logout_user()
+    return 'Successfully logged out user'
