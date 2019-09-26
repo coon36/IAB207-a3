@@ -10,7 +10,7 @@ def index():
 
 @bp.route('/manageitems')
 def manage():
-    return render_template('manage.html')
+    return render_template('ManageListing.html')
 
 @bp.route('/results')
 def result():
