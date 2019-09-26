@@ -16,6 +16,9 @@ def manage():
 def result():
     return render_template('result.html')
 
+@bp.route('/viewlisting')
+def viewlisting():
+    return render_template('ViewListing.html')
 
 @bp.route('/sellerhistory')
 def history():
@@ -24,3 +27,7 @@ def history():
 @bp.route('/create')
 def create():
     return render_template('CreateListing.html')
+
+@bp.route('/login')
+def login():
+    return render_template('user.html')
