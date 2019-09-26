@@ -13,6 +13,9 @@ class User(db.Model,UserMixin):
 	# the storage should be at least 255 chars long
     password_hash = db.Column(db.String(255), nullable=False)
 
+    bid = db.relationship('Bid', backref='user')
+    listing = db.relationship('Listing', backref='user')
+
     def __repr__(self): #string print method
         return "<Name: {}, ID: {}>".format(self.user_name, self.id)
 
@@ -22,7 +25,11 @@ class Bid(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_of_bid = db.Column(db.Date, nullable=False)
     bid_price = db.Column(db.Float, nullable=False)
-    ##FOREIGN KEY IS USER_ID AND LISTING_ID
+
+    # Foreign keys
+    user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
+    listing_id = db.Column(db.Integer, db.ForeignKey('Items.id'))
+
 
     def __repr__(self):
         return "<Name: {}, ID: {}>".format(self.date_of_bid, self.id)
@@ -36,6 +43,9 @@ class Transaction(db.Model):
     price_paid = db.Column(db.Float, nullable=False)
 
     #foreign keys are user_id and listing_id
+    user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
+    listing_id = db.Column(db.Integer, db.ForeignKey('Items.id'))
+
     def __repr__(self):
         return "<Name: {}, id: {}>".format(self.purchase_date, self.id)
 
@@ -56,12 +66,14 @@ class Listing(db.Model):
     game_platform = db.Column(db.String(64), nullable=False)
     game_genre = db.Column(db.String(64), nullable=False)
     backwards_compatibility = db.Column(db.String(64), nullable=False)
+    bid = db.relationship('Bid', backref='listing')
+    transaction = db.relationship('Transaction', backref='listing')
 
-    hotelid = db.Column(db.Integer, db.ForeignKey('hotels.id'))
-    userid = db.Column(db.Integer, db.ForeignKey('users.id'))
-    # foreign key is user_id
+    # Foreign keys
+    user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
+
 
     def __repr__(self):
-        return "<id: {} from user {} >".format(self.comment, self.userid)
+        return "<id: {} from user {} >".format(self.listing_title, self.id)
 
 
