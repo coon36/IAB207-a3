@@ -13,27 +13,57 @@
         {% block content %}
         <br>
 
-    <div class="result-container" style="margin: 0 auto; width: 40%">
+      <h1 class="title" style="text-align:center">Results</h1>
+      <div class="row">  
+        <div class="col-md-8 offset-md-2">  
+          <div class="card my-3">  
+            <div class="card-body">  
+              <div class="media">  
+                <img class="align-self-start mr-3" src="../static/Images/overwatchxboxone.png" alt="Mazda CX-5 Maxx SUV" style="max-width: 250px;">  
+                <div class="media-body">    
+                    <div class="float-right text-right"> 
+                        <p>Date Listed: dd/mm/yy</p></div> <!--add in id-->   
+                      <h4 class="mt-0" style="color: #6c757d;">Overwatch</h4>
+                      <small class="font-weight-bold text-muted">PC</small>
+                      <p>Price </p> <!--Description-->
+                      <p>$39.99 </p>
+                      <p>Overwatch is a colorful team-based shooter game starring a diverse cast of powerful heroes. Travel the world, build a team, and contest objectives in exhilarating 6v6 combat.</p>
+                      <div class="float-right text-right">
+                        <p>Username: user_id</p>
+                      </div>
+                  <a href="#" class="btn btn-warning">See Details</a>  
+                </div>  
+              </div>  
+            </div>  
+          </div>  
+        </div>  
+      </div> 
+      <div class="row">  
+        <div class="col-md-8 offset-md-2">  
+          <div class="card my-3">  
+            <div class="card-body">  
+              <div class="media">  
+                <img class="align-self-start mr-3" src="../static/Images/overwatchxboxone.png" alt="Mazda CX-5 Maxx SUV" style="max-width: 250px;">  
+                <div class="media-body"> 
+                  <div class="float-right text-right"> 
+                    <p>Date Listed: dd/mm/yy</p></div> <!--add in id-->   
+                    <h4 class="mt-0" style="color: #6c757d;">Overwatch</h4>
+                    <small class="font-weight-bold text-muted">PC</small>
+                  <p>Price </p> <!--Description-->
+                  <p>$39.99 </p>
+                  <p>Overwatch is a colorful team-based shooter game starring a diverse cast of powerful heroes. Travel the world, build a team, and contest objectives in exhilarating 6v6 combat.</p>
+                  <div class="float-right text-right">
+                    <p>Username: user_id</p>
+                  </div>
+                  <a href="#" class="btn btn-warning">See Details</a>
+                </div>  
+              </div>  
+            </div>  
+          </div>  
+        </div>  
+      </div>   
 
-        <h1 class="title-results">Games</h1>
-        <article class="card">
-            <img src="../static/Images/overwatchxboxone.png" class="card-img-top" alt="Overwatch">
-            <div class="card-body">
-            <h5 class="card-title">game_id</h5>
-            <p class="card-text">text_id</p>
-            <a href="#" class="btn btn-primary">See Now</a>
-            </div>
-        </article>
-                
-        <article class="card">
-            <img src="../static/Images/overwatchxboxone.png" class="card-img-top" alt="Overwatch">
-            <div class="card-body">
-            <h5 class="card-title">game_id</h5>
-            <p class="card-text">text_id</p>
-            <a href="#" class="btn btn-primary">See Now</a>
-            </div>
-        </article>
-    </div>        
+
 
 </body>
 {% endblock %}
