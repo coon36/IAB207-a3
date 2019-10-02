@@ -17,7 +17,7 @@ class User(db.Model,UserMixin):
     listing = db.relationship('Listing', backref='user')
 
     def __repr__(self): #string print method
-        return "<Name: {}, ID: {}>".format(self.user_name, self.id)
+        return "{}".format(self.user_name)
 
 class Bid(db.Model):
     __tablename__='Bids'
