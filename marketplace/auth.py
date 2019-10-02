@@ -61,7 +61,7 @@ def register():
             db.session.add(new_user)
             db.session.commit()
             #commit to the database and redirect to HTML page
-            return redirect(url_for('main.index'))
+            return redirect(url_for('auth.login'))
     #the else is called when there is a get message
     else:
         return render_template('user.html', form=form, heading='Register')
