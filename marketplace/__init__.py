@@ -1,5 +1,5 @@
 #import flask - from the package import class
-from flask import Flask
+from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
@@ -34,6 +34,10 @@ def create_app():
     #def load_user(user_id):
     #    return User.query.get(int(user_id))
 
+    @app.errorhandler(404)
+    def not_found(e):
+        return render_template('404.html'), 404
+
     #importing views module here to avoid circular references
     # a commonly used practice.
     from . import views
@@ -53,7 +57,6 @@ def create_app():
     @login_manager.user_loader
     def load_user(user_id):
         return User.query.get(int(user_id))
-
 
 
     return app
