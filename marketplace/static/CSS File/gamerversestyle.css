@@ -14,7 +14,7 @@
 color:  #6c757d;
 text-decoration: none;
 background-color: #ffc107;
-} 
+}
 
 .dropdown-menu {
 background-color:#ffbb33;
@@ -44,10 +44,10 @@ text-align: center;
 padding-left: 15px;
 }
 
-.my-custom-scrollbar {
-    position: relative;
-    height: 600px;
-    overflow: auto;
+.custom-scrollbar {
+  position: relative;
+  max-height: 600px;
+  overflow: auto;
 }
 
 .table-wrapper-scroll-y {
@@ -65,13 +65,3 @@ padding-left: 15px;
 .bidButton {
     display: inline-block;
 }
-
-
-
-
-
-
-
-
-  
-  

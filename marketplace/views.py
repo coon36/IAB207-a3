@@ -6,6 +6,7 @@ import os
 bp = Blueprint('main', __name__)
 
 @bp.route('/')
+def home():
     listing = Listing.query.filter_by(date=date_posted).all()
     return render_template('Homepage.html', listing=listing)
 
