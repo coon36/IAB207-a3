@@ -60,9 +60,10 @@ def register():
             new_user = User(user_name=uname, password_hash=pwd_hash, email_id=email, account_creation_date = account_creation_date)
             db.session.add(new_user)
             db.session.commit()
+            u1 = User.query.filter_by(user_name=uname).first()
+            login_user(u1)
             #commit to the database and redirect to HTML page
-            flash('You have successfully registered with Gamerverse! Please log-in with the same details.', 'success')
-            return redirect(url_for('auth.login'))
+            return redirect(url_for('main.index'))
     #the else is called when there is a get message
     else:
         return render_template('user.html', form=form, heading='Register')
