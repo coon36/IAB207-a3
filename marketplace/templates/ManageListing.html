@@ -31,6 +31,7 @@
           </div>
           <!-- End of left side of Manage Listing page -->
 
+<<<<<<< HEAD
           <!-- Start of right side of Manage Listing page -->
           <div class="col-md-9">
               <div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -74,6 +75,196 @@
       <br>
   </section>
   <!-- End of right side of Manage Listing page -->
+=======
+                <!-- Start of right side of Manage Listing page -->
+                <div class="col-md-9">
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                        <table class="table table-bordered table-striped mb-0">
+                            <thead class="text-secondary">
+                                <tr>
+                                    <th scope="col">Select A Bid</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Email Address</th>
+                                    <th scope="col">Date and Time of Bid</th>
+                                    <th scope="col">Bid Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              {% for bid in Bid %}
+                                <tr>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radioButton">
+                                      </label>
+                                    </div>
+                                  </td>
+                                  <td>{{bid.user_id.user_name}}</td>
+                                  <td>{{bid.user_id.email_id}}</td>
+                                  <td>{{bid.date_of_bid}}</td>
+                                  <td>{{bid.bid_price}}</td>
+                                </tr>
+                              
+                              
+                                <!-- <tr>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radioButton">
+                                      </label>
+                                    </div>
+                                  </td>
+                                  <td>tarynhubbard</td>
+                                  <td>thubbard802@drabbuhnyrat.com</td>
+                                  <td>5266030946</td>
+                                  <td>01.09.2019 (12:00)</td>
+                                  <td>$84.00</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radioButton">
+                                      </label>
+                                    </div>
+                                  </td>
+                                  <td>gavinherrera</td>
+                                  <td>gherrera66@arerrehnivag.net</td>
+                                  <td>8152363066</td>
+                                  <td>02.09.2019 (13:00)</td>
+                                  <td>$84.00</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radioButton">
+                                      </label>
+                                    </div>
+                                  </td>
+                                  <td>christianwheeler</td>
+                                  <td>cwheeler999@releehwnaitsirhc.biz</td>
+                                  <td>4148752860</td>
+                                  <td>03.09.2019 (14:00)</td>
+                                  <td>$84.00</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radioButton">
+                                      </label>
+                                    </div>
+                                  </td>
+                                  <td>jennyortega</td>
+                                  <td>jortega639@agetroynnej.com</td>
+                                  <td>3817294131</td>
+                                  <td>04.09.2019 (15:00)</td>
+                                  <td>$84.00</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radioButton">
+                                      </label>
+                                    </div>
+                                  </td>
+                                  <td>leonardkeller</td>
+                                  <td>lkeller745@rellekdranoel.com</td>
+                                  <td>3022206684</td>
+                                  <td>05.09.2019 (16:00)</td>
+                                  <td>$84.00</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radioButton">
+                                      </label>
+                                    </div>
+                                  </td>
+                                  <td>alecclarke</td>
+                                  <td>aclarke724@ekralccela.com</td>
+                                  <td>9599143034</td>
+                                  <td>06.09.2019 (17:00)</td>
+                                  <td>$84.00</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radioButton">
+                                      </label>
+                                    </div>
+                                  </td>
+                                  <td>zachariahpage</td>
+                                  <td>zpage325@egaphairahcaz.net</td>
+                                  <td>8646591000</td>
+                                  <td>07.09.2019 (18:00)</td>
+                                  <td>$84.00</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radioButton">
+                                      </label>
+                                    </div>
+                                  </td>
+                                  <td>aaronshaw</td>
+                                  <td>ashaw482@wahsnoraa.biz</td>
+                                  <td>5192447756</td>
+                                  <td>08.09.2019 (19:00)</td>
+                                  <td>$84.00</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radioButton">
+                                      </label>
+                                    </div>
+                                  </td>
+                                  <td>kelvinrobertson</td>
+                                  <td>krobertson4@nostrebornivlek.biz</td>
+                                  <td>8994894942</td>
+                                  <td>09.09.2019 (20:00)</td>
+                                  <td>$84.00</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radioButton">
+                                      </label>
+                                    </div>
+                                  </td>
+                                  <td>chrisguzman</td>
+                                  <td>cguzman264@namzugsirhc.com</td>
+                                  <td>3297500525</td>
+                                  <td>10.09.2019 (21:00)</td>
+                                  <td>$84.00</td>
+                                </tr> -->
+                               
+                            </tbody>
+                        </table>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="bidSelectionButtons">
+                <button type="button" class="btn btn-success mr-1" data-toggle="modal"
+                    data-target="#confirmationModal">
+                    Confirm Bid Selection
+                </button>
+                <a href="#" class ="btn btn-danger" onclick="window.history.back();return false;">Back</a>
+            </div>
+            <br>
+        </section>
+        <!-- End of right side of Manage Listing page -->
+>>>>>>> a3cf8e031064faada9b2a2db8dd56c73f7428fb5
 
   <!-- Start of modal for confirming the selection of a bid -->
   <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
