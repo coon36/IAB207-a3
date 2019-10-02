@@ -2,100 +2,98 @@
 
 
 {% block header %}
-        <!-- Start of Jumbotron -->
-        <div class="jumbotron jumbotron-fluid card card-image text-white text-center"
-            style="background-image: url(../static/Images/heroimage.png);">
-            <h1 class="display-2">View Listing</h1>
-        </div>
-        <!-- End of Jumbotron -->
+  <!-- Start of Jumbotron -->
+  <div class="jumbotron jumbotron-fluid card card-image text-white text-center"
+      style="background-image: url(../static/Images/heroimage.png);">
+      <h1 class="display-2">View Listing</h1>
+  </div>
+  <!-- End of Jumbotron -->
 
-        {% endblock %}
-        {% block content %}
-        <br>
+{% endblock %}
+{% block content %}
+  <!-- Start of left card of View Listing page -->
+  <section>
+      <div class="card-deck pt-3">
+          <article class="card">
+              <img class="card-img-top" src="../static/Images/supersmashbrosultimate.jpg"
+                  alt="Super Smash Bros. Ultimate Game Image">
+              <div class="card-body">
+                  <h4 class="card-title text-center text-secondary">Listing Details:<br></h4>
+                  <p class="card-text text-center">Date Listed: 30.08.2019<br> Listed By:
+                      briannahassett<br>Listing ID#3333</p>
+              </div>
+          </article>
+          <!-- End of left card of View Listing page -->
 
-        <!-- Start of left card of View Listing page -->
-        <section>
-            <div class="card-deck">
-                <article class="card">
-                    <img class="card-img-top" src="../static/Images/supersmashbrosultimate.jpg"
-                        alt="Super Smash Bros. Ultimate Game Image">
-                    <div class="card-body">
-                        <h4 class="card-title text-center text-secondary">Listing Details:<br></h4>
-                        <p class="card-text text-center">Date Listed: 30.08.2019<br> Listed By:
-                            briannahassett<br>Listing ID#3333</p>
-                    </div>
-                </article>
-                <!-- End of left card of View Listing page -->
-
-                <!-- Start of right card of View Listing page -->
-                <div class="card text-center">
-                    <h1 class="card-header text-secondary">Super Smash Bros. Ultimate (Preowned)<br>$84.00</h1>
-                    <div class="card-body">
-                        <p class="text-center pt-2 pb-3"><strong>Price:</strong> $84.00</p>
-                        <hr>
-                        <p class="text-center pt-2 pb-3"><strong>Description:</strong> Legendary game worlds and fighters collide in the ultimate
-                        showdown –
-                        a new entry in the Super Smash Bros. series for Nintendo Switch! New fighters,
-                        like Inkling from the Splatoon series and Ridley from the Metroid series, make their
-                        Super Smash Bros.
-                        series debut alongside every Super Smash Bros. fighter in the series…EVER! Faster
-                        combat, new items, new attacks,
-                        new defensive options and more will keep the battle raging whether you’re at home or on
-                        the go!</p>
-                        <hr>
-                        <p class="text-center pt-2 pb-3"><strong>Condition Of Game:</strong> Preowned</p>
-                        <hr>
-                        <p class="text-center pt-2 pb-3"><strong>Release Date:</strong> December 7, 2018</p>
-                        <hr>
-                        <p class="text-center pt-2 pb-3"><strong>Genre:</strong> Action</p>
-                        <hr>
-                        <p class="text-center pt-2 pb-3"><strong>Classification:</strong> PG</p>
-                        <hr>
-                        <p class="text-center pt-2 pb-3"><strong>Platform:</strong> Nintendo Switch</p>
-                        <hr>
-                        <p class="text-center pt-2"><strong>Availability:</strong> Available</p>
-                      </div>
-                    <div class="card-footer text-muted">
-                        <div class="bidButton">
-                            <button type="button" class="btn btn-success mr-1" data-toggle="modal"
-                                data-target="#confirmationModal">Bid Now</button>
-                        </div>
-                        <div class="bidButton">
-                           <!-- <a href="/" role="button" class="btn btn-danger">Go Back</a> -->
-                           <a href="#" class ="btn btn-danger" onclick="window.history.back();return false;">Back</a>
-                        </div>
-                    </div>
+          <!-- Start of right card of View Listing page -->
+          <div class="card text-center">
+              <h1 class="card-header text-secondary">{{listing.listing_title}}<br>$84.00</h1>
+              <div class="card-body">
+                  <p class="text-center pt-2 pb-3"><strong>Price:</strong> ${{listing.purchase_price}}</p>
+                  <hr>
+                  <p class="text-center pt-2 pb-3"><strong>Description:</strong> Legendary game worlds and fighters collide in the ultimate
+                  showdown –
+                  a new entry in the Super Smash Bros. series for Nintendo Switch! New fighters,
+                  like Inkling from the Splatoon series and Ridley from the Metroid series, make their
+                  Super Smash Bros.
+                  series debut alongside every Super Smash Bros. fighter in the series…EVER! Faster
+                  combat, new items, new attacks,
+                  new defensive options and more will keep the battle raging whether you’re at home or on
+                  the go!</p>
+                  <hr>
+                  <p class="text-center pt-2 pb-3"><strong>Condition Of Game:</strong> Preowned</p>
+                  <hr>
+                  <p class="text-center pt-2 pb-3"><strong>Release Date:</strong> December 7, 2018</p>
+                  <hr>
+                  <p class="text-center pt-2 pb-3"><strong>Genre:</strong> Action</p>
+                  <hr>
+                  <p class="text-center pt-2 pb-3"><strong>Classification:</strong> PG</p>
+                  <hr>
+                  <p class="text-center pt-2 pb-3"><strong>Platform:</strong> Nintendo Switch</p>
+                  <hr>
+                  <p class="text-center pt-2"><strong>Availability:</strong> Available</p>
                 </div>
-            </div>
-            <br>
-        </section>
-        <!-- End of right card of View Listing page -->
+              <div class="card-footer text-muted">
+                  <div class="bidButton">
+                      <button type="button" class="btn btn-success mr-1" data-toggle="modal"
+                          data-target="#confirmationModal">Bid Now</button>
+                  </div>
+                  <div class="bidButton">
+                     <!-- <a href="/" role="button" class="btn btn-danger">Go Back</a> -->
+                     <a href="#" class ="btn btn-danger" onclick="window.history.back();return false;">Back</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <br>
+  </section>
+  <!-- End of right card of View Listing page -->
 
         
 
 
-        <!-- Start of modal for confirming the bid -->
-        <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
-            aria-labelledby="confirmationModal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="confirmationModal">Confirm Bid</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="text-center">Are you sure you want to make a bid of $84.00 on Super Smash Bros.
-                            Ultimate
-                            (Preowned)?<br><br></p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="/" role="button" class="btn btn-success">Confirm Bid</a>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End of modal for confirming the creation of the listing -->
-            {% endblock %}
+  <!-- Start of modal for confirming the bid -->
+  <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
+      aria-labelledby="confirmationModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="confirmationModal">Confirm Bid</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <p class="text-center pb-3">Are you sure you want to make
+                       a bid of $84.00 on Super Smash
+                       Bros. Ultimate (Preowned)?</p>
+              </div>
+              <div class="modal-footer">
+                  <a href="/" role="button" class="btn btn-success">Confirm Bid</a>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- End of modal for confirming the creation of the listing -->
+{% endblock %}
