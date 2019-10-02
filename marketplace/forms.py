@@ -20,6 +20,7 @@ class RegisterForm(FlaskForm):
     #submit button
     submit = SubmitField("Register")
 
+
 # for jared, whenever
 #create listing form
 #class CreateListingForm(FlaskForm):
