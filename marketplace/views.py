@@ -9,11 +9,6 @@ bp = Blueprint('main', __name__)
 def index():
     return render_template('Homepage.html')
 
-@bp.route('/manageitems')
-# @login_required
-def manage():
-    return render_template('ManageListing.html')
-
 @bp.route('/results')
 def result():
     return render_template('result.html')

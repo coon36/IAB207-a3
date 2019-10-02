@@ -8,3 +8,9 @@ bp = Blueprint('listings', __name__, url_prefix='/listings')
 def show(id):
     listing = Listing.query.filter_by(id=id).first()
     return render_template('ViewListing.html', listing=listing)
+
+@bp.route('/manage-<id>')
+# @login required
+def manage(id):
+    listing = Listing.query.filter_by(id=id).first()
+    return render_template('ManageListing.html', listing=listing)
