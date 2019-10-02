@@ -17,13 +17,6 @@ def manage():
 @bp.route('/results')
 def result():
     return render_template('result.html')
-<<<<<<< HEAD
-=======
-
-@bp.route('/viewlisting')
-def viewlisting():
-    return render_template('ViewListing.html')
->>>>>>> c1e1eef37464e367ab027d237f36eb81d604290a
 
 @bp.route('/sellerhistory')
 # @login_required
