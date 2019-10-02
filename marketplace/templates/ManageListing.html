@@ -39,12 +39,27 @@
                                     <th scope="col">Select A Bid</th>
                                     <th scope="col">Username</th>
                                     <th scope="col">Email Address</th>
-                                    <th scope="col">Contact Phone Number</th>
                                     <th scope="col">Date and Time of Bid</th>
                                     <th scope="col">Bid Value</th>
                                 </tr>
                             </thead>
                             <tbody>
+                              {% for bid in Bids %}
+                                <tr>
+                                  <td>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="radioButton">
+                                      </label>
+                                    </div>
+                                  </td>
+                                  <td>{{bid.user_id.user_name}}</td>
+                                  <td>{{bid.user_id.email_id}}</td>
+                                  <td>{{bid.date_of_bid}}</td>
+                                  <td>{{bid.bid_price}}</td>
+                                </tr>
+                              {% endfor %}
+                              <!--
                                 <tr>
                                   <td>
                                     <div class="form-check">
@@ -185,6 +200,7 @@
                                   <td>10.09.2019 (21:00)</td>
                                   <td>$84.00</td>
                                 </tr>
+                                -->
                             </tbody>
                         </table>
                     </div>

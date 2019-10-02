@@ -30,7 +30,6 @@ class Bid(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
     listing_id = db.Column(db.Integer, db.ForeignKey('Items.id'))
 
-
     def __repr__(self):
         return "<Name: {}, ID: {}>".format(self.date_of_bid, self.id)
 
@@ -74,5 +73,3 @@ class Listing(db.Model):
 
     def __repr__(self):
         return "<id: {} from user {} >".format(self.listing_title, self.id)
-
-

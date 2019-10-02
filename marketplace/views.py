@@ -12,13 +12,9 @@ def index():
 def manage():
     return render_template('ManageListing.html')
 
-# @bp.route('/results')
-# def result():
-#     return render_template('result.html')
-
-@bp.route('/viewlisting')
-def viewlisting():
-    return render_template('ViewListing.html')
+@bp.route('/results')
+def result():
+    return render_template('result.html')
 
 @bp.route('/sellerhistory')
 def history():
