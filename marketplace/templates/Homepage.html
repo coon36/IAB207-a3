@@ -21,18 +21,20 @@
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
+              {% for i in range(0, 8) %}
                     <article class="card">
-                      <img class="card-img-top" src="../static/Images/finalfantasyx_x-2.png"
-                          alt="Final Fantasy X | X-2 HD Remaster Game Image">
+                      <img class="card-img-top" src={{listing.listing_img_url}}>
+                          alt={{listing.listing_title}}>
                       <div class="card-body">
-                          <h4 class="card-title text-center">Final Fantasy X | X-2 HD Remaster (Preowned)</h4>
-                          <p class="card-text text-center">Playstation 4<br>$78.00<br>(Select for more details)</p>
+                          <h4 class="card-title text-center">{{listing.listing_title}}</h4>
+                          <p class="card-text text-center">{{listing.game_platform}}<br>{{listing.purchase_price}}<br>(Select for more details)</p>
                           <a href="viewlisting" class="stretched-link" target="_self"></a>
                       </div>
                     </article>
                   </div>
+          {% endfor %} 
 
-                  <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
+                  <!-- <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
                     <article class="card">
                       <img class="card-img-top" src="../static/Images/kingdomheartsiiips4.png"
                           alt="Kingdom Hearts III Game Image">
@@ -115,7 +117,7 @@
                   </div>
                 </div>
               </div>
-            </section>
+            </section> -->
             <!-- End of Today's Most Popular Games Collection -->
 
             {% endblock %}

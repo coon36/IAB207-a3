@@ -1,26 +1,17 @@
 from flask import Blueprint, render_template, redirect, url_for, request
 from flask_login import login_required, current_user
-from . import db
-from .models import Listing
-from .forms import ItemCreationForm
-from datetime import datetime
 from werkzeug.utils import secure_filename
 import os
 
 bp = Blueprint('main', __name__)
 
-
 @bp.route('/')
-def index():
-    return render_template('Homepage.html')
+    listing = Listing.query.filter_by(date=date_posted).all()
+    return render_template('Homepage.html', listing=listing)
 
 @bp.route('/results')
 def result():
     return render_template('result.html')
-
-@bp.route('/viewlisting')
-def viewlisting():
-    return render_template('ViewListing.html')
 
 @bp.route('/sellerhistory')
 # @login_required
