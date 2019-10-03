@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request
 from . import db
-from .models import Listing
+from .models import Listing, Bid, User, Transaction
 from .forms import ItemCreationForm
 from datetime import datetime
 from flask_login import login_required, current_user
@@ -11,7 +11,7 @@ bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def home():
-    listing = Listing.query.filter_by(date=date_posted).all()
+    listing = Listing.query.filter_by(id=id)
     return render_template('Homepage.html', listing=listing)
 
 @bp.route('/results')
