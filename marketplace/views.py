@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, redirect, url_for, request
 from . import db
-from .models import Listing
+from .models import Listing, Bid
 from .forms import ItemCreationForm
-from datetime import datetime
+from datetime import datetime, date
 from flask_login import login_required, current_user
 from werkzeug.utils import secure_filename
 import os
@@ -49,10 +49,16 @@ def create():
         game_platform = form.game_platform.data,
         listing_img_url = db_file_path)
 
-
-
         db.session.add(item)
 
         db.session.commit()
 
     return render_template('CreateListing.html', form = form)
+
+@bp.route('/confirmbid', methods=['GET', 'POST'])
+def confirmbid():
+    bid = Bid(date_of_bid = date.today(), user_id = current_user.id,
+    listing_id = request.form['listingID'])
+    db.session.add(bid)
+    db.session.commit()
+    return render_template('Homepage.html')

@@ -34,7 +34,7 @@ def login():
         if error is None:
             #all good, set the login_user of flask_login to manage the user
             login_user(u1)
-            return redirect(url_for('main.index'))
+            return redirect(url_for('main.home'))
         else:
             flash(error)
     return render_template('user.html', form= form, heading='Login')
@@ -63,7 +63,7 @@ def register():
             u1 = User.query.filter_by(user_name=uname).first()
             login_user(u1)
             #commit to the database and redirect to HTML page
-            return redirect(url_for('main.index'))
+            return redirect(url_for('main.home'))
     #the else is called when there is a get message
     else:
         return render_template('user.html', form=form, heading='Register')
