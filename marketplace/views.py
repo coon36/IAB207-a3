@@ -14,9 +14,6 @@ def home():
     # listing = Listing.query.filter_by(date=date_posted).all()
     return render_template('Homepage.html')
 
-@bp.route('/results')
-def result():
-    return render_template('result.html')
 
 @bp.route('/sellerhistory')
 # @login_required
