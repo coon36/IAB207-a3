@@ -58,5 +58,9 @@ def create_app():
     def load_user(user_id):
         return User.query.get(int(user_id))
 
+    # where images are stored
+    UPLOAD_FOLDER = '/static/Images'
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
     return app

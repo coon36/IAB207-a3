@@ -11,6 +11,12 @@
 
         {% endblock %}
         {% block content %}
+
+        <!-- Temporary form for creating a listing -->
+        <div class="col-md-6 ml-5">
+            {{wtf.quick_form(form)}}
+        </div>
+
         <br>
 
         <!-- Start of Create Listing form -->
