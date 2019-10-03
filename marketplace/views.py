@@ -6,13 +6,21 @@ from datetime import datetime, date
 from flask_login import login_required, current_user
 from werkzeug.utils import secure_filename
 import os
+from sqlalchemy import desc
 
 bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def home():
-    # listing = Listing.query.filter_by(date=date_posted).all()
-    return render_template('Homepage.html')
+    listings = Listing.query.order_by(desc(Listing.date_posted)).limit(8).all()
+    # game1 = Listing(listing_title = "Hello", purchase_price = "$74.00", 
+    # game_platform = "XBOX")
+    # game2 = Listing(listing_title = "Hello2", purchase_price = "$74.00", 
+    # game_platform = "XBOX")
+    # game3 = Listing(listing_title = "Hello3", purchase_price = "$74.00", 
+    # game_platform = "XBOX")
+    # my_list = [game1, game2, game3]
+    return render_template('Homepage.html', listings = listings)
 
 
 @bp.route('/sellerhistory')
