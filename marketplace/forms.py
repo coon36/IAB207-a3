@@ -5,6 +5,7 @@ from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordFiel
 from wtforms.validators import InputRequired, Length, Email, EqualTo, DataRequired
 from wtforms import RadioField, StringField, SubmitField, SelectField
 from wtforms.fields.html5 import DateField
+from wtforms.widgets import TextArea
 
 #login form
 class LoginForm(FlaskForm):
@@ -32,8 +33,8 @@ ALLOWED_FILE = {'png', 'jpg', 'JPG', 'PNG', 'bmp', 'JPEG'}
 class ItemCreationForm(FlaskForm):
     listing_title = StringField('Listing Title', validators=[InputRequired()])
     purchase_price = StringField('Price', validators=[InputRequired()], )
-    description = TextAreaField('Description', validators=[InputRequired(), Length(min=10, max=200)])
-    game_condition = RadioField('Condition Of Game', choices=[('value','New'),('value_two','Preowned')])
+    description = TextAreaField('Description', widget=TextArea(), validators=[InputRequired(), Length(min=10, max=200)])
+    game_condition = RadioField('Condition Of Game', choices=[('New','New'),('Preowned','Preowned')])
     game_release_date = DateField('Release Date', validators=[InputRequired()], format='%Y-%m-%d')
     game_genre = SelectField('Genre', choices=[('Action', 'Action'), ('Adventure', 'Adventure',), ('Casual', 'Casual'), 
     ('Party', 'Party'), ('Role-Playing', 'Role-Playing'), ('Simulation', 'Simulation'), 
