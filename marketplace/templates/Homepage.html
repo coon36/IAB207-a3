@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 
 {% block header %}
-<<<<<<< HEAD
 <!-- Start of Jumbotron -->
-  <div class="jumbotron jumbotron-fluid card card-image text-white text-center"
-  style="background-image: url(../static/Images/heroimage.png);">
-    <h1 class="display-2">Gamerverse</h1>
-    <h2 class="display-4">A peer-to-peer marketplace</h2>
-    <h2 class="display-4">(For gamers, by gamers)</h2>
-  </div>
+<div class="jumbotron jumbotron-fluid card card-image text-white text-center"
+style="background-image: url(../static/Images/heroimage.png);">
+<h1 class="display-2">Gamerverse</h1>
+<h2 class="display-4">A peer-to-peer marketplace</h2>
+<h2 class="display-4">(For gamers, by gamers)</h2>
+</div>
 <!-- End of Jumbotron -->
 
 {% endblock %}
@@ -20,134 +19,103 @@
   </div>
   <div class="container-fluid">
     <div class="row">
-      {% for listing in range(0, 8) %}
-        <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
-          <article class="card">
-            <img class="card-img-top" src="{{listing.listing_img_url}}"
-                alt="{{listing.listing_title}}">
-            <div class="card-body">
-                <h4 class="card-title text-center">{{listing.listing_title}}</h4>
-                <p class="card-text text-center">{{listing.game_platform}}<br>{{listing.purchase_price}}<br>(Select for more details)</p>
-                <a href="#" class="stretched-link" target="_self"></a>
-            </div>
-          </article>
-=======
-        <!-- Start of Jumbotron -->
-        <div class="jumbotron jumbotron-fluid card card-image text-white text-center"
-            style="background-image: url(../static/Images/heroimage.png);">
-            <h1 class="display-2">Gamerverse</h1>
-            <h2 class="display-4">A peer-to-peer marketplace</h2>
-            <h2 class="display-4">(For gamers, by gamers)</h2>
->>>>>>> 7ec5010dca6c9e059064a0c9c0827e0b008032d3
-        </div>
-        <!-- End of Jumbotron -->
+      {% for listing in listings %}
+      <div class="col-sm-6 col-md-4 col-lg-3 pb-3 d-flex">
+        <article class="card flex-fill">
+          <img class="card-img-top" src={{listing.listing_img_url}}
+              alt={{listing.listing_title}}>
+          <div class="card-body">
+              <h4 class="card-title text-center">{{listing.listing_title}}</h4>
+              <p class="card-text text-center">{{listing.game_platform}}<br>{{listing.purchase_price}}<br>(Select for more details)</p>
+              <a href="viewlisting" class="stretched-link" target="_self"></a>
+          </div>
+        </article>
+      </div>
+      {% endfor %}
+      <!-- <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
+        <article class="card">
+          <img class="card-img-top" src="../static/Images/kingdomheartsiiips4.png"
+              alt="Kingdom Hearts III Game Image">
+          <div class="card-body">
+              <h4 class="card-title text-center">Kingdom Hearts III (Preowned)</h4>
+              <p class="card-text text-center">Playstation 4<br>$64.00<br>(Select for more details)</p>
+              <a href="viewlisting" class="stretched-link" target="_self"></a>
+          </div>
+        </article>
+      </div>
 
-        {% endblock %}
-        {% block content %}
-            <!-- Start of Today's Most Popular Games Collection -->
-            <section>
-              <div class="text-secondary text-center">
-                <h1>Today's Most Popular Video Games</h1>
-              </div>
-              <div class="container-fluid">
-                <div class="row">
-                  {% for listing in listings %}
-                  <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
-                    <article class="card">
-                      <img class="card-img-top" src={{listing.listing_img_url}}
-                          alt={{listing.listing_title}}>
-                      <div class="card-body">
-                          <h4 class="card-title text-center">{{listing.listing_title}}</h4>
-                          <p class="card-text text-center">{{listing.game_platform}}<br>{{listing.purchase_price}}<br>(Select for more details)</p>
-                          <a href="viewlisting" class="stretched-link" target="_self"></a>
-                      </div>
-                    </article>
-                  </div>
-                  {% endfor %}
-                  <!-- <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
-                    <article class="card">
-                      <img class="card-img-top" src="../static/Images/kingdomheartsiiips4.png"
-                          alt="Kingdom Hearts III Game Image">
-                      <div class="card-body">
-                          <h4 class="card-title text-center">Kingdom Hearts III (Preowned)</h4>
-                          <p class="card-text text-center">Playstation 4<br>$64.00<br>(Select for more details)</p>
-                          <a href="viewlisting" class="stretched-link" target="_self"></a>
-                      </div>
-                    </article>
-                  </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
+        <article class="card">
+          <img class="card-img-top" src="../static/Images/overwatchxboxone.png" alt="Overwatch Game Image">
+          <div class="card-body">
+              <h4 class="card-title text-center">Overwatch (Preowned)</h4>
+              <p class="card-text text-center">Xbox One<br>$38.00<br>(Select for more details)</p>
+              <a href="viewlisting" class="stretched-link" target="_self"></a>
+          </div>
+        </article>
+      </div>
 
-                  <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
-                    <article class="card">
-                      <img class="card-img-top" src="../static/Images/overwatchxboxone.png" alt="Overwatch Game Image">
-                      <div class="card-body">
-                          <h4 class="card-title text-center">Overwatch (Preowned)</h4>
-                          <p class="card-text text-center">Xbox One<br>$38.00<br>(Select for more details)</p>
-                          <a href="viewlisting" class="stretched-link" target="_self"></a>
-                      </div>
-                    </article>
-                  </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
+        <article class="card">
+          <img class="card-img-top" src="../static/Images/supersmashbrosultimate.jpg"
+              alt="Super Smash Bros. Ultimate Game Image">
+          <div class="card-body">
+              <h4 class="card-title text-center">Super Smash Bros. Ultimate (Preowned)</h4>
+              <p class="card-text text-center">Nintendo Switch<br>$84.00<br>(Select for more details)</p>
+              <a href="viewlisting" class="stretched-link" target="_self"></a>
+          </div>
+        </article>
+      </div>
 
-                  <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
-                    <article class="card">
-                      <img class="card-img-top" src="../static/Images/supersmashbrosultimate.jpg"
-                          alt="Super Smash Bros. Ultimate Game Image">
-                      <div class="card-body">
-                          <h4 class="card-title text-center">Super Smash Bros. Ultimate (Preowned)</h4>
-                          <p class="card-text text-center">Nintendo Switch<br>$84.00<br>(Select for more details)</p>
-                          <a href="viewlisting" class="stretched-link" target="_self"></a>
-                      </div>
-                    </article>
-                  </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
+        <article class="card">
+          <img class="card-img-top" src="../static/Images/thelegendofzeldaocarinaoftime3ds.png"
+              alt="The Legend of Zelda: Ocarina of Time 3D Game Image">
+          <div class="card-body">
+              <h4 class="card-title text-center">The Legend of Zelda: Ocarina of Time 3D (Preowned)</h4>
+              <p class="card-text text-center">Nintendo 3DS<br>$24.00<br>(Select for more details)</p>
+              <a href="viewlisting" class="stretched-link" target="_self"></a>
+          </div>
+        </article>
+      </div>
 
-                  <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
-                    <article class="card">
-                      <img class="card-img-top" src="../static/Images/thelegendofzeldaocarinaoftime3ds.png"
-                          alt="The Legend of Zelda: Ocarina of Time 3D Game Image">
-                      <div class="card-body">
-                          <h4 class="card-title text-center">The Legend of Zelda: Ocarina of Time 3D (Preowned)</h4>
-                          <p class="card-text text-center">Nintendo 3DS<br>$24.00<br>(Select for more details)</p>
-                          <a href="viewlisting" class="stretched-link" target="_self"></a>
-                      </div>
-                    </article>
-                  </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
+        <article class="card">
+          <img class="card-img-top" src="../static/Images/worldofwarcraftbattlechest.png"
+              alt="World of Warcraft Battlechest Game Image">
+          <div class="card-body">
+              <h4 class="card-title text-center">World of Warcraft Battlechest (New)</h4>
+              <p class="card-text text-center">PC<br>$29.95<br>(Select for more details)</p>
+              <a href="viewlisting" class="stretched-link" target="_self"></a>
+          </div>
+        </article>
+      </div>
 
-                  <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
-                    <article class="card">
-                      <img class="card-img-top" src="../static/Images/worldofwarcraftbattlechest.png"
-                          alt="World of Warcraft Battlechest Game Image">
-                      <div class="card-body">
-                          <h4 class="card-title text-center">World of Warcraft Battlechest (New)</h4>
-                          <p class="card-text text-center">PC<br>$29.95<br>(Select for more details)</p>
-                          <a href="viewlisting" class="stretched-link" target="_self"></a>
-                      </div>
-                    </article>
-                  </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
+        <article class="card">
+          <img class="card-img-top" src="../static/Images/gears5.jpg" alt="Gears 5 Game Image">
+          <div class="card-body">
+              <h4 class="card-title text-center">Gears 5 (New)</h4>
+              <p class="card-text text-center">Xbox One<br>$99.95<br>(Select for more details)</p>
+              <a href="viewlisting" class="stretched-link" target="_self"></a>
+          </div>
+        </article>
+      </div>
 
-                  <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
-                    <article class="card">
-                      <img class="card-img-top" src="../static/Images/gears5.jpg" alt="Gears 5 Game Image">
-                      <div class="card-body">
-                          <h4 class="card-title text-center">Gears 5 (New)</h4>
-                          <p class="card-text text-center">Xbox One<br>$99.95<br>(Select for more details)</p>
-                          <a href="viewlisting" class="stretched-link" target="_self"></a>
-                      </div>
-                    </article>
-                  </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
+        <article class="card">
+          <img class="card-img-top" src="../static/Images/spyroreignitedtrilogy.jpg"
+              alt="Spyro: Reignited Trilogy Game Image">
+          <div class="card-body">
+              <h4 class="card-title text-center">Super Smash Bros. Ultimate (New)</h4>
+              <p class="card-text text-center">Nintendo Switch<br>$69.95<br>(Select for more details)</p>
+              <a href="viewlisting" class="stretched-link" target="_self"></a>
+          </div>
+        </article>
+      </div> -->
+    </div>
+  </div>
+</section>
+<!-- End of Today's Most Popular Games Collection -->
 
-                  <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
-                    <article class="card">
-                      <img class="card-img-top" src="../static/Images/spyroreignitedtrilogy.jpg"
-                          alt="Spyro: Reignited Trilogy Game Image">
-                      <div class="card-body">
-                          <h4 class="card-title text-center">Super Smash Bros. Ultimate (New)</h4>
-                          <p class="card-text text-center">Nintendo Switch<br>$69.95<br>(Select for more details)</p>
-                          <a href="viewlisting" class="stretched-link" target="_self"></a>
-                      </div>
-                    </article>
-                  </div> -->
-                </div>
-              </div>
-            </section>
-            <!-- End of Today's Most Popular Games Collection -->
-
-            {% endblock %}
+{% endblock %}
