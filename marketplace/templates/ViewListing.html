@@ -79,7 +79,11 @@
                       {{listing.purchase_price}} on {{listing.listing_title}}?</p>
               </div>
               <div class="modal-footer">
-                  <a href="/" role="button" class="btn btn-success">Confirm Bid</a>
+                    <form action="/confirmbid" method="post">
+                        <input type="hidden" name="listingID" value={{listing.id}} />
+                        <button type="submit" class="btn btn-success" value="confirm">Confirm Bid</button>
+                    </form>
+                  <!--<a href="/" role="button" class="btn btn-success">Confirm Bid</a>-->
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
               </div>
           </div>

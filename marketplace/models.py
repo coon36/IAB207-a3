@@ -24,7 +24,6 @@ class Bid(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     date_of_bid = db.Column(db.Date, nullable=False)
-    bid_price = db.Column(db.Float, nullable=False)
 
     # Foreign keys
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))

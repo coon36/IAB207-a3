@@ -1,22 +1,27 @@
 from flask import Blueprint, render_template, redirect, url_for, request
 from . import db
-from .models import Listing, Bid, User, Transaction
+from .models import Listing, Bid
 from .forms import ItemCreationForm
-from datetime import datetime
+from datetime import datetime, date
 from flask_login import login_required, current_user
 from werkzeug.utils import secure_filename
 import os
+from sqlalchemy import desc
 
 bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def home():
-    listing = Listing.query.filter_by(id=id)
-    return render_template('Homepage.html', listing=listing)
+    listings = Listing.query.order_by(desc(Listing.date_posted)).limit(8).all()
+    # game1 = Listing(listing_title = "Hello", purchase_price = "$74.00",
+    # game_platform = "XBOX")
+    # game2 = Listing(listing_title = "Hello2", purchase_price = "$74.00",
+    # game_platform = "XBOX")
+    # game3 = Listing(listing_title = "Hello3", purchase_price = "$74.00",
+    # game_platform = "XBOX")
+    # my_list = [game1, game2, game3]
+    return render_template('Homepage.html', listings = listings)
 
-@bp.route('/results')
-def result():
-    return render_template('result.html')
 
 @bp.route('/sellerhistory')
 # @login_required
@@ -52,10 +57,16 @@ def create():
         game_platform = form.game_platform.data,
         listing_img_url = db_file_path)
 
-
-
         db.session.add(item)
 
         db.session.commit()
 
     return render_template('CreateListing.html', form = form)
+
+@bp.route('/confirmbid', methods=['GET', 'POST'])
+def confirmbid():
+    bid = Bid(date_of_bid = date.today(), user_id = current_user.id,
+    listing_id = request.form['listingID'])
+    db.session.add(bid)
+    db.session.commit()
+    return render_template('Homepage.html')
