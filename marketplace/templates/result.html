@@ -8,12 +8,12 @@
     </div>
         <!-- End of Jumbotron -->
 
-        {% endblock %}
-        {% block content %}
+{% endblock %}
+{% block content %}
 
         <!-- Search Results -->
     <h1 class="title" style="text-align:center">Results</h1>
-    <div class="row">  
+    <!-- <div class="row">  
         <div class="col-md-8 offset-md-2">  
           <div class="card my-3">  
             <div class="card-body">  
@@ -21,7 +21,7 @@
                 <img class="align-self-start mr-3" src="../static/Images/overwatchxboxone.png" alt="Overwatch" style="max-width: 250px;">  
                 <div class="media-body"> 
                   <div class="float-right text-right"> 
-                    <p>Date Listed: dd/mm/yy</p></div> <!--add in id-->   
+                    <p>Date Listed: dd/mm/yy</p></div> 
                     <h4 class="mt-0" style="color: #6c757d;">Overwatch</h4>
                     <small class="font-weight-bold text-muted">PC</small> 
                     <p>$39.99 </p>
@@ -35,24 +35,25 @@
             </div>  
           </div>  
         </div>  
-      </div>  
-    {% if Items %}
+      </div>   -->
+    <div class="container-fluid">
       <div class="row">  
-    {% for listing in Items %}
+    {% for listing in listings %}
+
         <div class="col-md-8 offset-md-2">  
           <div class="card my-3">  
             <div class="card-body">  
               <div class="media">  
-                <img class="align-self-start mr-3" src="{{Items.listing_img_url}}" alt="{{Items.listing_title}}" style="max-width: 250px;">  
+                <img class="align-self-start mr-3" src="{{listing.listing_img_url}}" alt="{{listing.listing_title}}" style="max-width: 250px;">  
                 <div class="media-body">    
                     <div class="float-right text-right"> 
-                        <p>{{Items.date_posted}}</p></div>    
-                      <h4 class="mt-0" style="color: #6c757d;">{{Items.listing_title}}</h4>
-                      <small class="font-weight-bold text-muted">{{Items.game_platform}}</small>
-                      <p>{{Items.purchase_price}}</p>
-                      <p>{{Items.description}}</p> 
+                        <p>{{listing.date_posted}}</p></div>    
+                      <h4 class="mt-0" style="color: #6c757d;">{{listing.listing_title}}</h4>
+                      <small class="font-weight-bold text-muted">{{listing.game_platform}}</small>
+                      <p>{{listing.purchase_price}}</p>
+                      <p>{{listing.description}}</p> 
                       <div class="float-right text-right">
-                        <p>{{Items.user_id}}</p>
+                        <p>{{listing.user_id}}</p>
                       </div>
                   <a href="{{url_for('viewlisting', id=items.id)}}" class="btn btn-warning">See Details</a>  
                 </div>  
@@ -60,10 +61,12 @@
             </div>  
           </div>  
         </div>  
+
       {% endfor %}
-      </div>  
+      </div> 
+    </div>
        
-      {% endif %} 
+    
       
       <!-- End of Search Results -->
 
