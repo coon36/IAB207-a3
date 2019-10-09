@@ -71,4 +71,4 @@ class Listing(db.Model):
 
 
     def __repr__(self):
-        return "<id: {} from user {} >".format(self.listing_title, self.id)
+        return "{}".format(self.id)
