@@ -1,6 +1,6 @@
-from flask import ( 
+from flask import (
     Blueprint, flash, render_template, request, url_for, redirect
-) 
+)
 from werkzeug.security import generate_password_hash,check_password_hash
 #from .models import User
 from .forms import LoginForm,RegisterForm
@@ -34,6 +34,7 @@ def login():
         if error is None:
             #all good, set the login_user of flask_login to manage the user
             login_user(u1)
+            flash('Logged in successfully!', 'info')
             return redirect(url_for('main.home'))
         else:
             flash(error)
@@ -73,4 +74,5 @@ def register():
 @bp.route('/logout')
 def logout():
     logout_user()
-    return 'Successfully logged out user'
+    flash('Logged out successfully!', 'info')
+    return redirect(url_for('main.home'))

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, request
+from flask import Blueprint, render_template, redirect, url_for, request, flash
 from . import db
 from .models import Listing, Bid
 from .forms import ItemCreationForm
@@ -24,7 +24,7 @@ def home():
 
 
 @bp.route('/sellerhistory')
-# @login_required
+@login_required
 def history():
     return render_template('sellerhistory.html')
 
@@ -40,6 +40,7 @@ def check_upload_file(form):
 
 
 @bp.route('/create', methods = ['GET', 'POST'])
+@login_required
 def create():
     print('In create item')
     form = ItemCreationForm()
@@ -70,5 +71,5 @@ def confirmbid():
     listing_id = request.form['listingID'])
     db.session.add(bid)
     db.session.commit()
-    return redirect('/')
-    # needs a flash to inform user of bid submission
+    flash('Bid submitted!', 'info')
+    return redirect(url_for('main.home'))

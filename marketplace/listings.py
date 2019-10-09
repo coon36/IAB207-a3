@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from flask_login import login_required
 from .models import Listing, Bid, User, Transaction
 from . import db
 
@@ -10,7 +11,7 @@ def show(id):
     return render_template('ViewListing.html', listing=listing)
 
 @bp.route('/manage-<id>')
-# @login required
+@login_required
 def manage(id):
     listing = Listing.query.filter_by(id=id).first()
     return render_template('ManageListing.html', listing=listing)
