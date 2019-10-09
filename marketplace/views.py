@@ -64,9 +64,11 @@ def create():
     return render_template('CreateListing.html', form = form)
 
 @bp.route('/confirmbid', methods=['GET', 'POST'])
+@login_required
 def confirmbid():
     bid = Bid(date_of_bid = date.today(), user_id = current_user.id,
     listing_id = request.form['listingID'])
     db.session.add(bid)
     db.session.commit()
-    return render_template('Homepage.html')
+    return redirect('/')
+    # needs a flash to inform user of bid submission
