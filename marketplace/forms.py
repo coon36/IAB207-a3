@@ -10,8 +10,8 @@ from wtforms.widgets import TextArea
 #login form
 class LoginForm(FlaskForm):
     user_name = StringField("Username", validators=[InputRequired('Please enter your username.')])
-    password = PasswordField("Password", validators=[InputRequired('Please enter your password.')])
-    submit = SubmitField("Login")
+    password = PasswordField("Password", validators=[InputRequired('Please enter your password.')], render_kw={"a-value" : "b123"})
+    submit = SubmitField("Login", render_kw={"submit-value" : "b123"})
 
 #registration form
 class RegisterForm(FlaskForm):
@@ -20,9 +20,9 @@ class RegisterForm(FlaskForm):
     #linking two fields - password should be equal to data entered in confirm
     password = PasswordField("Password", validators=[InputRequired('Please enter a password.'),
                   EqualTo('confirm', message="Passwords should match.")])
-    confirm = PasswordField("Please confirm your password.")
+    confirm = PasswordField("Please confirm your password")
     #submit button
-    submit = SubmitField("Register")
+    submit = SubmitField("Register", render_kw={"submit2-value" : "b888"})
 
 
 

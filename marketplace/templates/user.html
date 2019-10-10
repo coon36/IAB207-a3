@@ -10,18 +10,16 @@
 {% endblock %}
 
 {% block content %}
-  <h4 class="pl-3">{{heading}}</h4>
-
+<div class="col-md-8 offset-md-2">
+  <h4 class="mt-0" style="color: #6c757d;">{{heading}}</h4>
 
   <!-- Form rendering is simple and easy if using bootstrap -->
-  <div class="col-md-7 col-lg-6">
       {{wtf.quick_form(form)}}
-  </div>
 
   <!-- When you have login form, then do show the user a link to register -->
   {% if heading|lower =='login' %}
-    <div class="col-md-4 mb-5 ml-5">
-        <p>New user? <a href="{{ url_for('auth.register') }}">Click here to register</a>.</p>
+        <br>
+        <p class= text-center>New user? <br> <a href="{{ url_for('auth.register') }}">Click here to register</a>.</p>
     </div>
   {% endif %}
 {% endblock %}

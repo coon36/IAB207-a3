@@ -65,3 +65,16 @@ padding-left: 15px;
 .bidButton {
     display: inline-block;
 }
+
+
+[submit-value= "b123"] {
+    background-color: green !important;
+    color:white !important;
+    text-align: center !important;
+}
+
+[submit2-value= "b888"] {
+    background-color: green !important;
+    color:white !important;
+    text-align: center !important;
+}
