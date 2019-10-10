@@ -44,16 +44,24 @@
                   <hr>
                   <p class="text-center pt-2"><strong>Availability:</strong> {{listing.availability_status}}</p>
                 </div>
-              <div class="card-footer text-muted">
-                  <div class="bidButton">
-                      <button type="button" class="btn btn-success mr-1" data-toggle="modal"
-                          data-target="#confirmationModal">Bid Now</button>
-                  </div>
-                  <div class="bidButton">
-                     <!-- <a href="/" role="button" class="btn btn-danger">Go Back</a> -->
-                     <a href="#" class ="btn btn-danger" onclick="window.history.back();return false;">Back</a>
-                  </div>
-              </div>
+              {% if current_user.id == listing.user %}
+                <div class="card-footer text-muted">
+                    <div class="d-flex justify-content-center">
+                       <a href="/manage/{{listing.id}}" class ="btn btn-warning">Manage Listing</a>
+                    </div>
+                </div>
+              {% else %}
+                <div class="card-footer text-muted">
+                    <div class="bidButton">
+                        <button type="button" class="btn btn-success mr-1" data-toggle="modal"
+                            data-target="#confirmationModal">Bid Now</button>
+                    </div>
+                    <div class="bidButton">
+                       <!-- <a href="/" role="button" class="btn btn-danger">Go Back</a> -->
+                       <a href="#" class ="btn btn-danger" onclick="window.history.back();return false;">Back</a>
+                    </div>
+                </div>
+              {% endif %}
           </div>
       </div>
       <br>
