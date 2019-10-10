@@ -21,6 +21,11 @@
                   <p class="card-text text-center">Date Listed: {{listing.date_posted}}
                     <br>Listed By: {{listing.user}}<br>Listing ID #{{listing.id}}</p>
               </div>
+              <div class="card-footer text-muted">
+                  <div class="d-flex justify-content-center">
+                     <a href="/manage/{{listing.id}}" class ="btn btn-warning">Manage this listing</a>
+                  </div>
+              </div>
           </article>
           <!-- End of left card of View Listing page -->
 
