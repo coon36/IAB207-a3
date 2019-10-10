@@ -34,10 +34,10 @@ def login():
         if error is None:
             #all good, set the login_user of flask_login to manage the user
             login_user(u1)
-            flash('Logged in successfully!', 'info')
+            flash('Logged in successfully!', 'success')
             return redirect(url_for('main.home'))
         else:
-            flash(error)
+            flash(error, 'danger')
     return render_template('user.html', form= form, heading='Login')
 
 @bp.route('/register', methods=['GET','POST'])
@@ -53,7 +53,7 @@ def register():
             #check if a user exists
             u1 = User.query.filter_by(user_name=uname).first()
             if u1:
-                flash('User name already exists, please login')
+                flash('User name already exists, please login', 'warning')
                 return redirect(url_for('auth.login'))
             # don't store the password - create password hash
             pwd_hash = generate_password_hash(pwd)
@@ -74,5 +74,5 @@ def register():
 @bp.route('/logout')
 def logout():
     logout_user()
-    flash('Logged out successfully!', 'info')
+    flash('Logged out successfully!', 'success')
     return redirect(url_for('main.home'))

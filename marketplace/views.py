@@ -72,5 +72,5 @@ def confirmbid():
     listing_id = request.form['listingID'])
     db.session.add(bid)
     db.session.commit()
-    flash('Bid submitted!', 'info')
+    flash('Bid submitted!', 'success')
     return redirect(url_for('main.home'))
