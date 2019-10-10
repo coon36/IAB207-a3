@@ -52,6 +52,9 @@ def create_app():
     from . import result
     app.register_blueprint(result.bp)
 
+    from . import manage
+    app.register_blueprint(manage.bp)
+
     #create a user loader function takes useridand returns User
     from .models import User # importing here to avoid circular references
     @login_manager.user_loader
