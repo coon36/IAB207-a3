@@ -46,9 +46,9 @@ def register():
     #the validation of form submis is fine
     if (form.validate_on_submit() == True):
             #get username, password and email from the form
-            uname =form.user_name.data
+            uname = form.user_name.data
             pwd = form.password.data
-            email=form.email_id.data
+            email = form.email_id.data
             account_creation_date = date.today()
             #check if a user exists
             u1 = User.query.filter_by(user_name=uname).first()
