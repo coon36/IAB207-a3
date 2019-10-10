@@ -44,7 +44,7 @@
                   <hr>
                   <p class="text-center pt-2"><strong>Availability:</strong> {{listing.availability_status}}</p>
                 </div>
-              {% if current_user.id == listing.user %}
+              {% if current_user == listing.user %}
                 <div class="card-footer text-muted">
                     <div class="d-flex justify-content-center">
                        <a href="/manage/{{listing.id}}" class ="btn btn-warning">Manage Listing</a>
