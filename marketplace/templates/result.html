@@ -2,10 +2,10 @@
 
 {% block header %}
         <!-- Start of Jumbotron -->
-        <div class="jumbotron jumbotron-fluid card card-image text-white text-center"
-        style="background-image: url(../static/Images/heroimage.png);">
-        <h1 class="display-2">Results</h1>
-    </div>
+<div class="jumbotron jumbotron-fluid card card-image text-white text-center"
+style="background-image: url(../static/Images/heroimage.png);">
+<h1 class="display-2">Results</h1>
+</div>
         <!-- End of Jumbotron -->
 
 {% endblock %}
@@ -38,7 +38,7 @@
         </div>  
       </div>   -->
       <div class="row">  
-    {% for Listing in Listings %}
+    {% for listing in listings %}
         <div class="col-md-8 offset-md-2">  
           <div class="card my-3">  
             <div class="card-body">  
@@ -55,7 +55,7 @@
                       <div class="float-right text-right">
                         <p>{{listing.user_id}}</p>
                       </div>
-                  <a href="{{url_for('listing', id=items.id)}}" class="btn btn-warning">See Details</a>  
+                  <a href="#" class="btn btn-warning">See Details</a>  
                 </div>  
               </div>  
             </div>  
