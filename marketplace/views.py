@@ -56,7 +56,8 @@ def create():
         game_genre = form.game_genre.data,
         game_classification = form.game_classification.data,
         game_platform = form.game_platform.data,
-        listing_img_url = db_file_path)
+        listing_img_url = db_file_path,
+        user_id = current_user.id)
 
         db.session.add(item)
 
