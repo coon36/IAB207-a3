@@ -1,11 +1,30 @@
 
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
-from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordField, IntegerField, FloatField
-from wtforms.validators import InputRequired, Length, Email, EqualTo, DataRequired
-from wtforms import RadioField, StringField, SubmitField, SelectField
+from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordField, IntegerField, FloatField, FormField
+from wtforms.validators import InputRequired, Length, Email, EqualTo, DataRequired, AnyOf, NumberRange, Regexp
+from wtforms import RadioField, StringField, SubmitField, SelectField, ValidationError
 from wtforms.fields.html5 import DateField
 from wtforms.widgets import TextArea
+
+class PhoneDetails(FlaskForm):
+
+    # def length_check(form, field):
+    #     if str(field.data) != 10:
+    #         raise ValidationError('Please enter contact number with exactly 10 numbers.')
+    # number = IntegerField("Contact Number", validators=[length_check])
+    regex = "^\(?(?:\+?61|0)(?:(?:2\)?[ -]?(?:3[ -]?[38]|[46-9][ -]?[0-9]|5[ -]?[0-35-9])|3\)?(?:4[ -]?[0-57-9]|[57-9][ -]?[0-9]|6[ -]?[1-67])|7\)?[ -]?(?:[2-4][ -]?[0-9]|5[ -]?[2-7]|7[ -]?6)|8\)?[ -]?(?:5[ -]?[1-4]|6[ -]?[0-8]|[7-9][ -]?[0-9]))(?:[ -]?[0-9]){6}|4\)?[ -]?(?:(?:[01][ -]?[0-9]|2[ -]?[0-57-9]|3[ -]?[1-9]|4[ -]?[7-9]|5[ -]?[018])[ -]?[0-9]|3[ -]?0[ -]?[0-5])(?:[ -]?[0-9]){5})$"
+    number = StringField("Contact Number", validators=[Regexp(regex, message="Please enter a valid Australian phone number.")])
+
+class AccountDetails(FlaskForm):
+    user_name = StringField("Username", validators=[InputRequired('Please enter a username.')])
+    email_id = StringField("Email Address", validators=[Email("Please enter a valid email address.")])
+
+class PasswordDetails(FlaskForm):
+    #linking two fields - password should be equal to data entered in confirm
+    password = PasswordField("Password", validators=[InputRequired('Please enter a password.'),
+    EqualTo('confirm', message="Passwords should match.")])
+    confirm = PasswordField("Please confirm your password")
 
 #login form
 class LoginForm(FlaskForm):
@@ -15,12 +34,9 @@ class LoginForm(FlaskForm):
 
 #registration form
 class RegisterForm(FlaskForm):
-    user_name = StringField("Username", validators=[InputRequired('Please enter a username.')])
-    email_id = StringField("Email Address", validators=[Email("Please enter a valid email address.")])
-    #linking two fields - password should be equal to data entered in confirm
-    password = PasswordField("Password", validators=[InputRequired('Please enter a password.'),
-                  EqualTo('confirm', message="Passwords should match.")])
-    confirm = PasswordField("Please confirm your password")
+    account_details = FormField(AccountDetails)
+    mobile_phone = FormField(PhoneDetails)
+    password = FormField(PasswordDetails)
     #submit button
     submit = SubmitField("Register", render_kw={"submit2-value" : "b888"})
 

@@ -78,3 +78,9 @@ padding-left: 15px;
     color:white !important;
     text-align: center !important;
 }
+
+[cancel2-value= "b999"] {
+    background-color: red!important;
+    color:white !important;
+    text-align: center !important;
+}

@@ -3,8 +3,10 @@ from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_wtf import CSRFProtect
 
 db=SQLAlchemy()
+
 
 #create a function that creates a web application
 # a web server will run this web application
@@ -60,6 +62,10 @@ def create_app():
     @login_manager.user_loader
     def load_user(user_id):
         return User.query.get(int(user_id))
+
+    login_manager.login_message_category = "info"
+
+    csrf = CSRFProtect(app)
 
     # where images are stored
     UPLOAD_FOLDER = '/static/Images'

@@ -69,7 +69,7 @@ def create():
 @login_required
 def confirmbid():
     bid = Bid(date_of_bid = date.today(), user_id = current_user.id,
-    listing_id = request.form['listingID'])
+    listing_id = request.form['listingID'], contact_number = current_user.contact_number)
     db.session.add(bid)
     db.session.commit()
     flash('Bid submitted!', 'success')

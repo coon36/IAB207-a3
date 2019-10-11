@@ -9,11 +9,13 @@ class User(db.Model,UserMixin):
     profile_img_url = db.Column(db.String(60), nullable=False, default='default.jpg')
     user_name = db.Column(db.String(100), index=True, unique=True, nullable=False)
     email_id = db.Column(db.String(100), index=True, nullable=False)
+    contact_number = db.Column(db.String(50), nullable=False)
 	#password is never stored in the DB, an encrypted password is stored
 	# the storage should be at least 255 chars long
     password_hash = db.Column(db.String(255), nullable=False)
 
-    bid = db.relationship('Bid', backref='user')
+    bid_userid = db.relationship('Bid', backref='userid', foreign_keys = 'Bid.user_id')
+    bid_number = db.relationship('Bid', backref='number', foreign_keys = 'Bid.contact_number')
     listing = db.relationship('Listing', backref='user')
 
     def __repr__(self): #string print method
@@ -26,6 +28,7 @@ class Bid(db.Model):
     date_of_bid = db.Column(db.Date, nullable=False)
 
     # Foreign keys
+    contact_number = db.Column(db.String(50), db.ForeignKey('Users.contact_number'))
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
     listing_id = db.Column(db.Integer, db.ForeignKey('Items.id'))
 

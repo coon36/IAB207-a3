@@ -3,7 +3,7 @@ from flask import (
 )
 from werkzeug.security import generate_password_hash,check_password_hash
 #from .models import User
-from .forms import LoginForm,RegisterForm
+from .forms import LoginForm,RegisterForm,AccountDetails,PhoneDetails,PasswordDetails
 from flask_login import login_user, login_required,logout_user
 from .models import User
 from . import db
@@ -46,10 +46,11 @@ def register():
     #the validation of form submis is fine
     if (form.validate_on_submit() == True):
             #get username, password and email from the form
-            uname = form.user_name.data
-            pwd = form.password.data
-            email = form.email_id.data
+            uname = form.account_details.user_name.data
+            pwd = form.password.password.data
+            email = form.account_details.email_id.data
             account_creation_date = date.today()
+            contact_number = form.mobile_phone.number.data
             #check if a user exists
             u1 = User.query.filter_by(user_name=uname).first()
             if u1:
@@ -58,7 +59,7 @@ def register():
             # don't store the password - create password hash
             pwd_hash = generate_password_hash(pwd)
             #create a new user model object
-            new_user = User(user_name=uname, password_hash=pwd_hash, email_id=email, account_creation_date = account_creation_date)
+            new_user = User(user_name=uname, password_hash=pwd_hash, email_id=email, account_creation_date = account_creation_date, contact_number = contact_number)
             db.session.add(new_user)
             db.session.commit()
             u1 = User.query.filter_by(user_name=uname).first()
