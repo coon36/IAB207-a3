@@ -13,17 +13,17 @@ style="background-image: url(../static/Images/heroimage.png);">
 
         <!-- Search Results -->
     <h1 class="title" style="text-align:center">Results</h1>
-    <!-- <div class="row">  
-        <div class="col-md-8 offset-md-2">  
-          <div class="card my-3">  
-            <div class="card-body">  
-              <div class="media">  
-                <img class="align-self-start mr-3" src="../static/Images/overwatchxboxone.png" alt="Overwatch" style="max-width: 250px;">  
-                <div class="media-body"> 
-                  <div class="float-right text-right"> 
-                    <p>Date Listed: dd/mm/yy</p></div> 
+    <!-- <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="card my-3">
+            <div class="card-body">
+              <div class="media">
+                <img class="align-self-start mr-3" src="../static/Images/overwatchxboxone.png" alt="Overwatch" style="max-width: 250px;">
+                <div class="media-body">
+                  <div class="float-right text-right">
+                    <p>Date Listed: dd/mm/yy</p></div>
                     <h4 class="mt-0" style="color: #6c757d;">Overwatch</h4>
-                    <small class="font-weight-bold text-muted">PC</small> 
+                    <small class="font-weight-bold text-muted">PC</small>
                     <p>$39.99 </p>
                     <p>Overwatch is a colorful team-based shooter game starring a diverse cast of powerful heroes. Travel the world, build a team, and contest objectives in exhilarating 6v6 combat.</p>
                     <p class="font-weight-bold" style="color: #6c757d;">Available</p>
@@ -31,41 +31,41 @@ style="background-image: url(../static/Images/heroimage.png);">
                     <p>Username: user_id</p>
                   </div>
                   <a href="/viewlisting" class="btn btn-warning">See Details</a>
-                </div>  
-              </div>  
-            </div>  
-          </div>  
-        </div>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>   -->
-      <div class="row">  
+      <div class="row">
     {% for listing in listings %}
-        <div class="col-md-8 offset-md-2">  
-          <div class="card my-3">  
-            <div class="card-body">  
-              <div class="media">  
-                <img class="align-self-start mr-3" src="{{listing.listing_img_url}}" alt="{{listing.listing_title}}" style="max-width: 250px;">  
-                <div class="media-body">    
-                    <div class="float-right text-right"> 
-                        <p>{{listing.date_posted}}</p></div>    
+        <div class="col-md-8 offset-md-2">
+          <div class="card my-3">
+            <div class="card-body">
+              <div class="media">
+                <img class="align-self-start mr-3" src="{{listing.listing_img_url}}" alt="{{listing.listing_title}}" style="max-width: 250px;">
+                <div class="media-body">
+                    <div class="float-right text-right">
+                        <p>{{listing.date_posted}}</p></div>
                       <h4 class="mt-0" style="color: #6c757d;">{{listing.listing_title}}</h4>
                       <small class="font-weight-bold text-muted">{{listing.game_platform}}</small>
                       <p>{{listing.purchase_price}}</p>
-                      <p>{{listing.description}}</p> 
+                      <p>{{listing.description}}</p>
                       <p class="font-weight-bold" style="color: #6c757d;">{{listing.availability_status}}</p>
                       <div class="float-right text-right">
                         <p>{{listing.user_id}}</p>
                       </div>
-                  <a href="#" class="btn btn-warning">See Details</a>  
-                </div>  
-              </div>  
-            </div>  
-          </div>  
-        </div>  
+                  <a href="/listings/{{listing}}" class="btn btn-warning">See Details</a>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     {% endfor %}
-      </div> 
+      </div>
 
-    
-      
+
+
       <!-- End of Search Results -->
 
 
