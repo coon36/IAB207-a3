@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from . import db
-from .models import Listing, Bid
+from .models import Listing, Bid, Transaction, User
 from .forms import ItemCreationForm
 from datetime import datetime, date
 from flask_login import login_required, current_user
@@ -26,8 +26,8 @@ def home():
 @bp.route('/sellerhistory')
 @login_required
 def history():
-    listing = db.session.query(Listing.id, Listing.listing_title, 
-    Listing.date_posted, Transaction.purchase_date, User.user_name, 
+    listing = db.session.query(Listing.id, Listing.listing_title,
+    Listing.date_posted, Transaction.purchase_date, User.user_name,
     User.email_id, User.contact_number, Transaction.price_paid).\
     filter(Listing.id == Transaction.listing_id).\
     filter(Transaction.user_id == User.id).\
