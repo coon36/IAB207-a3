@@ -41,7 +41,7 @@ class Transaction(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     purchase_date = db.Column(db.Date, nullable=False)
-    price_paid = db.Column(db.Float, nullable=False)
+    price_paid = db.Column(db.String(16), nullable=False)
 
     #foreign keys are user_id and listing_id
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
@@ -56,7 +56,7 @@ class Listing(db.Model):
     __tablename__= 'Items'
     id = db.Column(db.Integer, primary_key=True)
     listing_title = db.Column(db.String(150), index=True)
-    purchase_price = db.Column(db.Float, nullable=False)
+    purchase_price = db.Column(db.String(16), nullable=False)
     date_posted = db.Column(db.Date, nullable=False, default=datetime.now())
     description = db.Column(db.String(250), nullable=False)
     availability_status = db.Column(db.String(64), nullable=False, default='Available')
