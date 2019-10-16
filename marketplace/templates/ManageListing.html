@@ -21,7 +21,7 @@
                 <img class="card-img-top" src="{{listing.listing_img_url}}"
                     alt="{{listing.listing_title}} Image">
                 <div class="card-body">
-                    <h4 class="card-title text-center text-secondary">Listing ID #{{listing_id}}
+                    <h4 class="card-title text-center text-secondary">Listing ID #{{listing}}
                       <br>{{listing.listing_title}}</h4>
                     <p class="card-text text-center">{{listing.game_platform}}
                       <br>{{listing.purchase_price}}<br>Date Listed: {{listing.date_posted}}
@@ -39,12 +39,12 @@
                         <tr>
                             <th scope="col">Select A Bid</th>
                             <th scope="col">Username</th>
-                            <th scope="col">Email Address</th>
+                            <th scope="col">Phone Number</th>
                             <th scope="col">Date and Time of Bid</th>
                         </tr>
                     </thead>
                     <tbody>
-                      {% for bid in listing.bid %}
+                      {% for bid in bids %}
                         <tr>
                           <td>
                             <div class="form-check">
@@ -53,8 +53,8 @@
                               </label>
                             </div>
                           </td>
-                          <td>{{bid.user}}</td>
-                          <td>{{bid.user.email_id}}</td>
+                          <td>{{bid.user_id}}</td>
+                          <td>{{bid.contact_number}}</td>
                           <td>{{bid.date_of_bid}}</td>
                         </tr>
                       {% endfor %}

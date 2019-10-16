@@ -10,4 +10,5 @@ bp = Blueprint('manage', __name__, url_prefix='/manage')
 @login_required
 def manage(id):
     listing = Listing.query.filter_by(id=id).first_or_404()
-    return render_template('ManageListing.html', listing=listing)
+    bids = Bid.query.filter_by(listing_id=id).all()
+    return render_template('ManageListing.html', listing=listing, bids=bids)
