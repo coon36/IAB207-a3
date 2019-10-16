@@ -47,8 +47,11 @@ class RegisterForm(FlaskForm):
 ALLOWED_FILE = {'png', 'jpg', 'JPG', 'PNG', 'bmp', 'JPEG'}
 
 class ItemCreationForm(FlaskForm):
+    Currency = "^\$(?!0\.00)\d{1,3}(,\d{3})*(\.\d\d)?$"
+
     listing_title = StringField('Listing Title', validators=[InputRequired()])
-    purchase_price = StringField('Price', validators=[InputRequired()], )
+    purchase_price = StringField('Price', validators=[InputRequired(message="Please enter a Selling price"), 
+                                            Regexp(Currency, message="Please enter a valid amount and currency e.g. '$30.00' '$59.99'")])
     description = TextAreaField('Description', widget=TextArea(), validators=[InputRequired(), Length(min=10, max=200)])
     game_condition = RadioField('Condition Of Game', choices=[('New','New'),('Preowned','Preowned')])
     game_release_date = DateField('Release Date', validators=[InputRequired()], format='%Y-%m-%d')

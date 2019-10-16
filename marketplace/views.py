@@ -69,6 +69,7 @@ def create():
         db.session.add(item)
 
         db.session.commit()
+        return redirect(url_for('main.home'))
 
     return render_template('CreateListing.html', form = form)
 
