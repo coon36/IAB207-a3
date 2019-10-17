@@ -27,13 +27,10 @@ def home():
 @login_required
 def history():
     listing = db.session.query(Listing.id, Listing.listing_title,
-    Listing.date_posted, Transaction.purchase_date, User.user_name,
-    User.email_id, User.contact_number, Transaction.price_paid).\
-    filter(Listing.id == Transaction.listing_id).\
-    filter(Transaction.user_id == User.id).\
-    filter(Listing.availability_status.like('Sold')).all()
-    # print(str(listing))
-    return render_template('sellerhistory.html')
+    Listing.date_posted, Listing.purchase_price, Transaction.purchase_date,
+    User.id, User.user_name).filter(Listing.id == Transaction.listing_id,
+    User.id == Transaction.user_id, Listing.availability_status == 'Sold').all()
+    return render_template('sellerhistory.html', listing=listing)
 
 
 def check_upload_file(form):

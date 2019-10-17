@@ -16,34 +16,34 @@
                     <div class="col-12 px-5">
                         <h4 class="p-3 mb-0 text-center text-secondary bg-warning">Seller History</h4>
                         <div class="table-wrapper-scroll-y custom-scrollbar">
+                          {% if listing == None %}
+                            <div class="row">
+                              <h5>No history available.</h5>
+                            </div>
+                          {% else %}
                             <table class="table table-bordered table-striped mb-0">
                                 <thead class="text-secondary">
                                     <tr>
-                                        <th scope="col">Listing ID</th>
                                         <th scope="col">Item Name</th>
                                         <th scope="col">Date Listed</th>
                                         <th scope="col">Date Sold</th>
-                                        <th scope="col">Username</th>
-                                        <th scope="col">Email Address</th>
-                                        <th scope="col">Contact Phone Number</th>
+                                        <th scope="col">Buyer</th>
                                         <th scope="col">Sale Price</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {% for s in listing %}
                                     <tr>
-                                        <td>{{s.id}}</td>
                                         <td>{{s.listing_title}}</td>
                                         <td>{{s.date_posted}}</td>
                                         <td>{{s.purchase_date}}</td>
                                         <td>{{s.user_name}}</td>
-                                        <td>{{s.email_id}}</td>
-                                        <td>{{s.contact_number}}</td>
-                                        <td>{{s.price_paid}}</td>
+                                        <td>{{s.purchase_price}}</td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
                             </table>
+                          {% endif %}
                         </div>
                     </div>
                 </div>
