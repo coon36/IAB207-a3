@@ -10,20 +10,16 @@
 
         {% endblock %}
         {% block content %}
-            <section>
+            <section class="container-fluid">
                 <div class="row">
-                    <div class="col-md-1">
-                    </div>
-                    <!-- End of left side of Manage Listing page -->
-
                     <!-- Centre page -->
-                    <div class="col-md-10">
+                    <div class="col-12 px-5">
                         <h4 class="p-3 mb-0 text-center text-secondary bg-warning">Seller History</h4>
-                        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                        <div class="table-wrapper-scroll-y custom-scrollbar">
                             <table class="table table-bordered table-striped mb-0">
                                 <thead class="text-secondary">
                                     <tr>
-                                        <th scope="col">Listing Id</th>
+                                        <th scope="col">Listing ID</th>
                                         <th scope="col">Item Name</th>
                                         <th scope="col">Date Listed</th>
                                         <th scope="col">Date Sold</th>
@@ -49,8 +45,6 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                    <div class="col-md-1">
                     </div>
                 </div>
                 {% endblock %}
