@@ -28,10 +28,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/sellerhistory">View Transaction History</a>
-                    </li>
                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">My Listings</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="/manageall">Your Listings</a>
+                            <a class="dropdown-item" href="/sellerhistory">Transaction History</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" href="/create">Create New Listing</a>
                     </li>
                     {% if current_user.is_authenticated %}
@@ -134,7 +138,7 @@
 
     <!-- Start of Copyright text -->
     <footer>
-        <div class="p text-center pt-5">Copyright &copy 2019 Gamerverse</p>
+        <div class="p text-center pt-5 pb-3">Copyright &copy 2019 Gamerverse</p>
     </footer>
     <!-- End of Copyright text -->
 
