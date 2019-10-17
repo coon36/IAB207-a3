@@ -23,6 +23,15 @@ def home():
     return render_template('Homepage.html', listings = listings)
 
 
+@bp.route('/manageall')
+@login_required
+def allListings():
+    listing = db.session.query(Listing.id, Listing.listing_title,
+    Listing.date_posted, Listing.purchase_price, Listing.user_id).\
+    filter(Listing.user_id == current_user.id).all()
+
+    return render_template('manageall.html', listing=listing)
+
 @bp.route('/sellerhistory')
 @login_required
 def history():
