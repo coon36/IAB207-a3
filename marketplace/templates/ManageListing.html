@@ -47,16 +47,10 @@
                     <tbody>
                       {% for bid in bids %}
                         <tr>
-                          <td>
-                            <div class="form-check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="radioButton">
-                              </label>
-                            </div>
-                          </td>
-                          <td>{{bid.user_name}}</td>
-                          <td>{{bid.contact_number}}</td>
-                          <td>{{bid.date_of_bid}}</td>
+                          <td style="vertical-align:middle;">{{bid.user_name}}</td>
+                          <td style="vertical-align:middle;">{{bid.contact_number}}</td>
+                          <td style="vertical-align:middle;">{{bid.date_of_bid}}</td>
+                          <td><a href="/manage/{{listing.id}}" class ="btn btn-warning">Select Bid</a></td>
                         </tr>
                       {% endfor %}
                     </tbody>
