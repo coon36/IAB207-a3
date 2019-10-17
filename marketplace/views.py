@@ -27,9 +27,11 @@ def home():
 @login_required
 def history():
     listing = db.session.query(Listing.id, Listing.listing_title,
-    Listing.date_posted, Listing.purchase_price, Transaction.purchase_date,
-    User.id, User.user_name).filter(Listing.id == Transaction.listing_id,
-    User.id == Transaction.user_id, Listing.availability_status == 'Sold').all()
+    Listing.date_posted, Listing.purchase_price, Listing.user_id,
+    Transaction.purchase_date, User.id, User.user_name).\
+    filter(Listing.id == Transaction.listing_id, User.id == Transaction.user_id,
+    Listing.availability_status == 'Sold', Listing.user_id == current_user.id).all()
+
     return render_template('sellerhistory.html', listing=listing)
 
 
