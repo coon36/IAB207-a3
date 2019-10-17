@@ -50,17 +50,17 @@ class ItemCreationForm(FlaskForm):
     Currency = "^\$(?!0\.00)\d{1,3}(,\d{3})*(\.\d\d)?$"
 
     listing_title = StringField('Listing Title', validators=[InputRequired()])
-    purchase_price = StringField('Price', validators=[InputRequired(message="Please enter a Selling price"), 
+    purchase_price = StringField('Price', validators=[InputRequired(message="Please enter a Selling price"),
                                             Regexp(Currency, message="Please enter a valid amount and currency e.g. '$30.00' '$59.99'")])
-    description = TextAreaField('Description', widget=TextArea(), validators=[InputRequired(), Length(min=10, max=200)])
+    description = TextAreaField('Description', widget=TextArea(), validators=[InputRequired(), Length(min=1, max=200)])
     game_condition = RadioField('Condition Of Game', choices=[('New','New'),('Preowned','Preowned')])
     game_release_date = DateField('Release Date', validators=[InputRequired()], format='%Y-%m-%d')
-    game_genre = SelectField('Genre', choices=[('Action', 'Action'), ('Adventure', 'Adventure',), ('Casual', 'Casual'), 
-    ('Party', 'Party'), ('Role-Playing', 'Role-Playing'), ('Simulation', 'Simulation'), 
+    game_genre = SelectField('Genre', choices=[('Action', 'Action'), ('Adventure', 'Adventure',), ('Casual', 'Casual'),
+    ('Party', 'Party'), ('Role-Playing', 'Role-Playing'), ('Simulation', 'Simulation'),
     ('Strategy', 'Strategy'), ('Sports', 'Sports'), ('MMO', 'MMO')])
     game_classification = SelectField('Classification', choices=[('G', '(G)'), ('PG', '(PG)'), ('M', '(M)'), ('MA', '(MA15+)'), ('R18', '(R18+)')])
-    game_platform = SelectField('Platform', validators=[InputRequired()], choices=[('Arcade', 'Arcade'), ('Atari', 'Atari'), 
-    ('Commodore 64', 'Commodore 64'), ('Nintendo', 'Nintendo'), ('Nintendo 3DS', 'Nintendo 3DS'), ('Nintendo DS', 'Nintendo DS'),  
+    game_platform = SelectField('Platform', validators=[InputRequired()], choices=[('Arcade', 'Arcade'), ('Atari', 'Atari'),
+    ('Commodore 64', 'Commodore 64'), ('Nintendo', 'Nintendo'), ('Nintendo 3DS', 'Nintendo 3DS'), ('Nintendo DS', 'Nintendo DS'),
     ('Nintendo Switch', 'Nintendo Switch'), ('Nintendo Wii', 'Nintendo Wii'), ('Nintendo Wii U', 'Nintendo Wii U'),  ('PC', 'PC'),
     ('Playstation 3', 'Playstation 3'), ('Playstation Classic', 'Playstation Classic'), ('Playstation Vita', 'Playstation Vita'),
     ('SEGA', 'SEGA'), ('Xbox 360', 'Xbox 360'), ('Xbox One', 'Xbox One')])
