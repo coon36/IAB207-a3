@@ -15,6 +15,7 @@
 
 <!-- Start of left side of Manage Listing page -->
 <section>
+  {% if listing.availability_status == 'Available' %}
     <div class="row">
         <div class="col-md-3">
             <article class="card">
@@ -33,7 +34,6 @@
 
         <!-- Start of right side of Manage Listing page -->
         <div class="col-md-9">
-          {% if listing.availability_status == 'Available' %}
             <div class="table-wrapper-scroll-y custom-scrollbar">
                 <table class="table table-bordered table-striped mb-0" style="overflow-x:scroll;">
                     <thead class="text-secondary">
@@ -45,52 +45,68 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for bid in bids %}
-                        {% if bid is none %}
+                      {% for bid in bids %}
                         <tr>
-                          <td>No data.</td>
+                          <td style="vertical-align:middle;">{{bid.user_name}}</td>
+                          <td style="vertical-align:middle;">{{bid.contact_number}}</td>
+                          <td style="vertical-align:middle;">{{bid.date_of_bid}}</td>
+                          <td><a href="/manage/{{listing.id}}" class ="btn btn-warning">Select Bid</a></td>
                         </tr>
-                        {% else %}
-                          <tr>
-                              <td style="vertical-align:middle;">{{bid.user_name}}</td>
-                              <td style="vertical-align:middle;">{{bid.contact_number}}</td>
-                              <td style="vertical-align:middle;">{{bid.date_of_bid}}</td>
-                              <td><a href="/manage/{{listing.id}}" class ="btn btn-warning">Select Bid</a></td>
-                          </tr>
-                        {% endif %}
                       {% endfor %}
-                      <!-- {% for bid in bids %}
-                        <tr>
-                          <td>
-                            <div class="form-check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="radioButton">
-                              </label>
-                            </div>
-                          </td>
-                          <td>{{bid.user_name}}</td>
-                          <td>{{bid.contact_number}}</td>
-                          <td>{{bid.date_of_bid}}</td>
-                        </tr>
-                      {% endfor %} -->
                     </tbody>
                 </table>
             </div>
         </div>
-      {% else %}
-        <p>test</p>
-      {% endif %}
     </div>
-    {% if listing.availability_status == 'Available' %}
-      <div class="bidSelectionButtons mt-5">
-          <button type="button" class="btn btn-success mr-1" data-toggle="modal"
-              data-target="#confirmationModal">
-              Confirm Bid Selection
-          </button>
-          <a href="#" class ="btn btn-danger" onclick="window.history.back();return false;">Back</a>
-      </div>
-    {% endif %}
+    <div class="bidSelectionButtons mt-5">
+        <button type="button" class="btn btn-success mr-1" data-toggle="modal"
+            data-target="#confirmationModal">
+            Confirm Bid Selection
+        </button>
+        <a href="#" class ="btn btn-danger" onclick="window.history.back();return false;">Back</a>
+    </div>
     <br>
+    <!-- End of right side of Manage Listing page -->
+  {% else %}
+    <!-- Start of left side of Manage Listing page -->
+    <div class="row">
+        <div class="col-md-4">
+            <article class="card">
+                <img class="card-img-top" src="{{listing.listing_img_url}}"
+                    alt="{{listing.listing_title}} Image">
+                <div class="card-body">
+                    <h4 class="card-title text-center text-secondary">Listing ID #{{listing}}
+                      <br>{{listing.listing_title}}</h4>
+                    <p class="card-text text-center">{{listing.game_platform}}
+                      <br>{{listing.purchase_price}}<br>Date Listed: {{listing.date_posted}}
+                    </p>
+                </div>
+            </article>
+        </div>
+        <!-- End of left side of Manage Listing page -->
+
+        <!-- Start of right side of Manage Listing page -->
+        <div class="col-md-8">
+          <h4 class="p-3 mb-0 text-center text-secondary bg-warning">Successfully sold!</h4>
+            <div class="table-wrapper-scroll-y custom-scrollbar">
+                <table class="table table-bordered table-striped mb-0" style="overflow-x:scroll;">
+                    <thead class="text-secondary">
+                        <tr>
+                            <th scope="col">Buyer</th>
+                            <th scope="col">Date Sold</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>{{purchase.user_name}}</td>
+                          <td>{{purchase.purchase_date}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  {% endif %}
 </section>
 <!-- End of right side of Manage Listing page -->
 
@@ -110,11 +126,7 @@
                 <p class="text-center">This item will be marked as sold with the current date upon confirmation.</p>
             </div>
             <div class="modal-footer">
-              <form action="/confirmbid" method="post">
-                <input type="hidden" name="listingID" value={{listing.id}} />
-                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-                <button type="submit" class="btn btn-success" value="confirm">Confirm Bid</button>
-            </form>
+                <a href="/" class="btn btn-success" role="button">Confirm Bid</a>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             </div>
         </div>
