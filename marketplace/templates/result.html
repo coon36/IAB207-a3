@@ -13,32 +13,41 @@ style="background-image: url(../static/Images/heroimage.png);">
 
         <!-- Search Results -->
     <h1 class="title" style="text-align:center">Results</h1>
-      <div class="row">
-    {% for listing in listings %}
-        <div class="col-md-8 offset-md-2">
-          <div class="card my-3">
-            <div class="card-body">
-              <div class="media">
-                <img class="align-self-start mr-3" src="{{listing.listing_img_url}}" alt="{{listing.listing_title}}" style="max-width: 250px;">
-                <div class="media-body">
-                    <div class="float-right text-right">
-                        <p>{{listing.date_posted}}</p></div>
-                      <h4 class="mt-0" style="color: #6c757d;">{{listing.listing_title}}</h4>
-                      <small class="font-weight-bold text-muted">{{listing.game_platform}}</small>
-                      <p>{{listing.purchase_price}}</p>
-                      <p>{{listing.description}}</p>
-                      <p class="font-weight-bold" style="color: #6c757d;">{{listing.availability_status}}</p>
-                      <div class="float-right text-right">
-                        <p>{{listing.user_id}}</p>
+    <h1 class="title text-secondary text-center" style="text-align:center">Browse By Category</h1>
+    <div class="container">
+    <!-- <div class="row justify-content-md-center">
+        <div class="dropdown">
+          <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">Sort By</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/results/condition_id=Preowned"></a>
+          <a class="dropdown-item" href="/results/condition_id=Preowned">Preowned</a>
+        </div> -->
+              <div class="row">
+            {% for listing in listings %}
+                <div class="col-md-8 offset-md-2">
+                  <div class="card my-3">
+                    <div class="card-body">
+                      <div class="media">
+                        <img class="align-self-start mr-3" src="{{listing.listing_img_url}}" alt="{{listing.listing_title}}" style="max-width: 250px;">
+                        <div class="media-body">
+                            <div class="float-right text-right">
+                                <p>{{listing.date_posted}}</p></div>
+                              <h4 class="mt-0" style="color: #6c757d;">{{listing.listing_title}}</h4>
+                              <small class="font-weight-bold text-muted">{{listing.game_platform}}</small>
+                              <p>{{listing.purchase_price}}</p>
+                              <p>{{listing.description}}</p>
+                              <p class="font-weight-bold" style="color: #6c757d;">{{listing.availability_status}}</p>
+                              <div class="float-right text-right">
+                                <p>{{listing.user_id}}</p>
+                              </div>
+                          <a href="/listings/{{listing}}" class="btn btn-warning">See Details</a>  
+                        </div>
                       </div>
-                  <a href="/listings/{{listing}}" class="btn btn-warning">See Details</a>  
+                    </div>
+                  </div>
                 </div>
+            {% endfor %}
               </div>
-            </div>
-          </div>
-        </div>
-    {% endfor %}
-      </div>
 
 
 
