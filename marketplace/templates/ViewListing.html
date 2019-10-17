@@ -50,7 +50,7 @@
                        <a href="/manage/{{listing.id}}" class ="btn btn-warning">Manage Listing</a>
                     </div>
                 </div>
-              {% else %}
+              {% elif listing.availability_status == 'Available' %}
                 <div class="card-footer text-muted">
                     <div class="bidButton">
                         <button type="button" class="btn btn-success mr-1" data-toggle="modal"
