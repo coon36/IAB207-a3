@@ -33,10 +33,10 @@
                                       </tr>
                                       {% else %}
                                         <tr>
-                                            <td>{{s.listing_title}}</td>
-                                            <td>{{s.date_posted}}</td>
-                                            <td>{{s.purchase_price}}</td>
-                                            <td><a href="/manage/{{listing.id}}" class ="btn btn-warning">Manage Listing</a></td>
+                                            <td style="vertical-align:middle;">{{s.listing_title}}</td>
+                                            <td style="vertical-align:middle;">{{s.date_posted}}</td>
+                                            <td style="vertical-align:middle;">{{s.purchase_price}}</td>
+                                            <td><a href="/manage/{{s.id}}" class ="btn btn-warning">Manage Listing</a></td>
                                         </tr>
                                       {% endif %}
                                     {% endfor %}
