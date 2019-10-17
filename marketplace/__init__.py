@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_wtf import CSRFProtect
 
+
 db=SQLAlchemy()
 
 
@@ -35,6 +36,7 @@ def create_app():
     #@login_manager.user_loader
     #def load_user(user_id):
     #    return User.query.get(int(user_id))
+
 
     @app.errorhandler(404)
     def not_found(e):
@@ -70,6 +72,21 @@ def create_app():
     # where images are stored
     UPLOAD_FOLDER = '/static/Images'
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+
+    import os 
+# ... other imports and code 
+    
+    def create_app(): 
+    
+        # ... other code 
+    
+        app.config.from_mapping(  
+            # Flask-SQLAlchemy settings  
+            SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL'], 
+    
+            #... other config  
+        )  
 
 
     return app
