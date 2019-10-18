@@ -50,7 +50,7 @@
                        <a href="/manage/{{listing.id}}" class ="btn btn-warning">Manage Listing</a>
                     </div>
                 </div>
-              {% elif listing.availability_status == 'Available' %}
+              {% elif listing.availability_status == 'Available' and bids is none %}
                 <div class="card-footer text-muted">
                     <div class="bidButton">
                         <button type="button" class="btn btn-success mr-1" data-toggle="modal"
@@ -60,6 +60,10 @@
                        <!-- <a href="/" role="button" class="btn btn-danger">Go Back</a> -->
                        <a href="#" class ="btn btn-danger" onclick="window.history.back();return false;">Back</a>
                     </div>
+                </div>
+              {% elif listing.availability_status == 'Available' and bids is not none %}
+                <div class="card-footer text-muted">
+                    <h4>Bid submitted on {{bids.date_of_bid}}!</h4>
                 </div>
               {% endif %}
           </div>
