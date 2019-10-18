@@ -38,10 +38,10 @@
                 <table class="table table-bordered table-striped mb-0" style="overflow-x:scroll;">
                     <thead class="text-secondary">
                         <tr>
-                            <th scope="col">Select A Bid</th>
                             <th scope="col">Username</th>
                             <th scope="col">Phone Number</th>
                             <th scope="col">Date of Bid</th>
+                            <th scope="col">Select A Bid</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,7 +50,7 @@
                           <td style="vertical-align:middle;">{{bid.user_name}}</td>
                           <td style="vertical-align:middle;">{{bid.contact_number}}</td>
                           <td style="vertical-align:middle;">{{bid.date_of_bid}}</td>
-                          <td><a href="/manage/{{listing.id}}" class ="btn btn-warning">Select Bid</a></td>
+                          <td><a class ="btn btn-warning" href="/manage/{{listing.id}}?user_id={{bid.id}}&listing_id={{bid.listing_id}}">Select Bid</a></td>
                         </tr>
                       {% endfor %}
                     </tbody>

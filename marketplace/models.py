@@ -41,7 +41,6 @@ class Transaction(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     purchase_date = db.Column(db.Date, nullable=False)
-    price_paid = db.Column(db.String(16), nullable=False)
 
     #foreign keys are user_id and listing_id
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
