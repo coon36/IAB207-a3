@@ -53,8 +53,8 @@ class ItemCreationForm(FlaskForm):
     purchase_price = StringField('Price', validators=[InputRequired(message="Please enter a Selling price"),
                                             Regexp(Currency, message="Please enter a valid amount and currency e.g. '$30.00' '$59.99'")])
     description = TextAreaField('Description', widget=TextArea(), validators=[InputRequired(), Length(min=1, max=200)])
-    game_condition = RadioField('Condition Of Game', choices=[('New','New'),('Preowned','Preowned')])
-    game_release_date = DateField('Release Date', validators=[InputRequired()], format='%Y-%m-%d')
+    game_condition = RadioField('Condition Of Game', choices=[('New','New'),('Preowned','Preowned')], default='New')
+    game_release_date = DateField('Release Date', validators=[InputRequired("Please select a date")], format='%Y-%m-%d')
     game_genre = SelectField('Genre', choices=[('Action', 'Action'), ('Adventure', 'Adventure',), ('Casual', 'Casual'),
     ('Party', 'Party'), ('Role-Playing', 'Role-Playing'), ('Simulation', 'Simulation'),
     ('Strategy', 'Strategy'), ('Sports', 'Sports'), ('MMO', 'MMO')])

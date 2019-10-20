@@ -31,27 +31,33 @@
                                     Title:</label>
                                 <div class="col-lg-9">
                                     {{form.listing_title(class="form-control", type="text", placeholder="Enter listing title here")}}
+                                    <ul>
                                     {% for error in form.listing_title.errors %}
-                                    <li style="color: red;">{{ error }}</li>
+                                        <li style="color: red;">{{ error }}</li>
                                     {% endfor %}
+                                    </ul>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Price:</label>
                                 <div class="col-lg-9">
                                     {{form.purchase_price(class="form-control", type="text", placeholder="Please enter price e.g. $50.00")}}
+                                    <ul>
                                     {% for error in form.purchase_price.errors %}
-                                    <li style="color: red;">{{ error }}</li>
+                                        <li style="color: red;">{{ error }}</li>
                                     {% endfor %}
+                                    </ul>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Description:</label>
                                 <div class="col-lg-9">
                                     {{form.description(class="form-control textarea", type="text", placeholder="Enter description here", rows="5")}}
+                                    <ul>
                                     {% for error in form.description.errors %}
-                                    <li style="color: red;">{{ error }}</li>
+                                        <li style="color: red;">{{ error }}</li>
                                     {% endfor %}
+                                    </ul>
                                 </div>
                             </div>
                             <fieldset>
@@ -69,6 +75,11 @@
                                 <label class="col-lg-3 col-form-label form-control-label">Release Date:</label>
                                 <div class="col-lg-9">
                                     {{form.game_release_date(class="datepicker form-control")}}
+                                    <ul>
+                                    {% for error in form.description.errors %}
+                                        <li style="color: red;">{{ error }}</li>
+                                    {% endfor %}
+                                    </ul>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -94,15 +105,17 @@
                                     Image:</label>
                                 <div class="col-lg-9">
                                     {{form.listing_img_url(class="FileField")}}
+                                    <ul>
+                                    {% for error in form.listing_img_url.errors %}
+                                        <li style="color: red;">{{ error }}</li>
+                                    {% endfor %}
+                                    </ul>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12 col-lg-9 pr-lg-1 col-xl-9 pr-xl-5">
                                     <div class="postButtons">
                                         {{form.submit(class="btn btn-success mr-1")}}
-                                        {% for error in form.game_release_date.errors %}
-                                        <li style="color: red;">{{ error }}</li>
-                                        {% endfor %}
                                         <a href="/" role="button" class="btn btn-danger">Cancel</a>
                                     </div>
                                 </div>
