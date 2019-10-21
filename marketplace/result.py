@@ -1,15 +1,7 @@
-# from flask import Blueprint, render_template
-# from .models import Listing
-# from . import db
-from flask import Blueprint, render_template, redirect, url_for, request, flash
+from flask import Blueprint, render_template
+from .models import Listing
 from . import db
-from .models import Listing, Bid
-from .forms import ItemCreationForm
-from datetime import datetime, date
-from flask_login import login_required, current_user
-from werkzeug.utils import secure_filename
-import os
-from sqlalchemy import desc
+
 
 bp = Blueprint('result', __name__, url_prefix='/results')
 
