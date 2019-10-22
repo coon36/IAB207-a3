@@ -12,3 +12,4 @@ def show(id):
     bids = Bid.query.filter_by(listing_id=id).first()
     return render_template('ViewListing.html', listing=listing, bids = bids)
     return render_template('ViewListing.html', listing=listing)
+ 
