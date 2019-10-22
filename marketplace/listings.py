@@ -9,6 +9,6 @@ bp = Blueprint('listings', __name__, url_prefix='/listings')
 @bp.route('/<id>')
 def show(id):
     listing = Listing.query.filter_by(id=id).first_or_404()
-    bids = Bid.query.filter_by(listing_id=id, user_id=current_user.id).first()
+    bids = Bid.query.filter_by(listing_id=id).first()
     return render_template('ViewListing.html', listing=listing, bids = bids)
     return render_template('ViewListing.html', listing=listing)
