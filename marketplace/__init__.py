@@ -2,7 +2,7 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
+from flask_login import LoginManager, AnonymousUserMixin
 from flask_wtf import CSRFProtect
 
 
@@ -61,6 +61,10 @@ def create_app():
 
     #create a user loader function takes useridand returns User
     from .models import User # importing here to avoid circular references
+
+    class AnonymousUser(AnonymousUserMixin):
+        id = -1
+
     @login_manager.user_loader
     def load_user(user_id):
         return User.query.get(int(user_id))
