@@ -55,11 +55,11 @@ class ItemCreationForm(FlaskForm):
     description = TextAreaField('Description', widget=TextArea(), validators=[InputRequired(), Length(min=1, max=200)])
     game_condition = RadioField('Condition Of Game', choices=[('New','New'),('Preowned','Preowned')], default='New')
     game_release_date = DateField('Release Date', validators=[InputRequired("Please select a date")], format='%Y-%m-%d')
-    game_genre = SelectField('Genre', choices=[('Action', 'Action'), ('Action-Adventure', 'Action-Adventure'), ('Adventure', 'Adventure',), ('Casual', 'Casual'),
+    game_genre = SelectField('Genre', choices=[(None, 'Please select game genre'), ('Action', 'Action'), ('Action-Adventure', 'Action-Adventure'), ('Adventure', 'Adventure',), ('Casual', 'Casual'),
     ('Party', 'Party'), ('Role-Playing', 'Role-Playing'), ('Simulation', 'Simulation'),
     ('Strategy', 'Strategy'), ('Sports', 'Sports'), ('MMO', 'MMO')])
-    game_classification = SelectField('Classification', choices=[('Exempt', 'Exempt (E)'), ('General', 'General (G)'), ('Parental Guidance', 'Parental Guidance (PG)'), ('Mature', 'Mature (M)'), ('Mature Accompanied', 'Mature Accompanied (MA)'), ('Restricted', 'Restricted (R 18+)')])
-    game_platform = SelectField('Platform', validators=[InputRequired()], choices=[('Arcade Systems', 'Arcade Systems'), ('Atari', 'Atari'),
+    game_classification = SelectField('Classification', choices=[(None, 'Please select game classification'), ('Exempt', 'Exempt (E)'), ('General', 'General (G)'), ('Parental Guidance', 'Parental Guidance (PG)'), ('Mature', 'Mature (M)'), ('Mature Accompanied', 'Mature Accompanied (MA)'), ('Restricted', 'Restricted (R 18+)')])
+    game_platform = SelectField('Platform', validators=[InputRequired()], choices=[(None, 'Please select game platform'), ('Arcade Systems', 'Arcade Systems'), ('Atari', 'Atari'),
     ('Commodore 64', 'Commodore 64'), ('Nintendo', 'Nintendo'), ('Nintendo 3DS', 'Nintendo 3DS'), ('Nintendo DS', 'Nintendo DS'),
     ('Nintendo Switch', 'Nintendo Switch'), ('Nintendo Wii', 'Nintendo Wii'), ('Nintendo Wii U', 'Nintendo Wii U'),  ('PC', 'PC'),
     ('Playstation 3', 'Playstation 3'), ('Playstation 4', 'Playstation 4'), ('Playstation Classic', 'Playstation Classic'), ('Playstation Vita', 'Playstation Vita'),
