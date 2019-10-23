@@ -20,6 +20,7 @@ def home():
     # game3 = Listing(listing_title = "Hello3", purchase_price = "$74.00",
     # game_platform = "XBOX")
     # my_list = [game1, game2, game3]
+    flash("Welcome to Australia's newest peer-to-peer marketplace! Register or log-in now in the navigation bar!", 'warning')
     return render_template('Homepage.html', listings = listings)
 
 
