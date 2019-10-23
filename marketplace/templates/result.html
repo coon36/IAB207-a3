@@ -12,17 +12,7 @@ style="background-image: url(../static/Images/heroimage.png);">
 {% block content %}
 
         <!-- Search Results -->
-    <h1 class="title" style="text-align:center">Showing results for:</h1>
-
-    <h1 class="title text-secondary text-center" style="text-align:center">Browse By Category</h1>
-    <div class="container">
-    <!-- <div class="row justify-content-md-center">
-        <div class="dropdown">
-          <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">Sort By</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="/results/condition_id=Preowned"></a>
-          <a class="dropdown-item" href="/results/condition_id=Preowned">Preowned</a>
-        </div> -->
+ 
               <div class="row">
             {% if (listings is defined) and listings %}
               {% for listing in listings %}
