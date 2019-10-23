@@ -13,6 +13,7 @@ def condition(game_condition):
     .order_by(desc(Listing.date_posted)).all()
     return render_template('result.html', listings=listings)
 
+
 @bp.route('/classification_id=<game_classification>') 
 def classification(game_classification):
     listings = Listing.query \
