@@ -42,6 +42,11 @@ def create_app():
     def not_found(e):
         return render_template('404.html'), 404
 
+    @app.errorhandler(500)
+    def internal_error(e):
+        db.session.rollback()
+        return render_template('500.html'), 500
+
     #importing views module here to avoid circular references
     # a commonly used practice.
     from . import views
@@ -78,19 +83,19 @@ def create_app():
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
-    import os 
-    # ... other imports and code 
-    
-    def create_app(): 
-    
-        # ... other code 
-    
-        app.config.from_mapping(  
-            # Flask-SQLAlchemy settings  
-            SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL'], 
-    
-            #... other config  
-        )  
+    import os
+    # ... other imports and code
+
+    def create_app():
+
+        # ... other code
+
+        app.config.from_mapping(
+            # Flask-SQLAlchemy settings
+            SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL'],
+
+            #... other config
+        )
 
 
     return app
