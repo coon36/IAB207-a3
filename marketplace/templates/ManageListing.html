@@ -54,7 +54,7 @@
                         <td style="vertical-align:middle;">{{bid.user_name}}</td>
                         <td style="vertical-align:middle;">{{bid.email_id}}</td>
                         <td style="vertical-align:middle;">{{bid.contact_number}}</td>
-                        <td><a class ="btn btn-warning" href="/manage/{{listing.id}}?user_id={{bid.id}}&listing_id={{bid.listing_id}}">Select Bid</a></td>
+                        <td><a class ="btn btn-warning" name="select_bid" value="selectbid" href="/manage/{{listing.id}}?user_id={{bid.id}}&listing_id={{bid.listing_id}}">Select Bid</a></td>
                       </tr>
                     {% endfor %}
                   </tbody>

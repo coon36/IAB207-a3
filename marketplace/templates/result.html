@@ -12,7 +12,12 @@ style="background-image: url(../static/Images/heroimage.png);">
 {% block content %}
 
         <!-- Search Results -->
- 
+        <div class="text-secondary text-center">
+            <h1>Showing results matching:</h1>
+          </div>
+          <div class="text-secondary text-center">
+              <h1>{{search_category}}</h1>
+            </div>
               <div class="row">
             {% if (listings is defined) and listings %}
               {% for listing in listings %}
