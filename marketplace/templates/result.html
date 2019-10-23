@@ -11,9 +11,11 @@ style="background-image: url(../static/Images/heroimage.png);">
 {% endblock %}
 {% block content %}
 
+
         <!-- Search Results -->
-    <h1 class="title" style="text-align:center">Results</h1>
-    <h1 class="title text-secondary text-center" style="text-align:center">{{results_heading}}</h1>
+        {% for listing in listings %}
+    <h1 class="title" style="text-align:center">Showing results for:</h1>
+    <h1 class="title text-secondary text-center" style="text-align:center">{{listing.game_condition}}</h1>
     <div class="container">
     <!-- <div class="row justify-content-md-center">
         <div class="dropdown">
@@ -23,7 +25,7 @@ style="background-image: url(../static/Images/heroimage.png);">
           <a class="dropdown-item" href="/results/condition_id=Preowned">Preowned</a>
         </div> -->
               <div class="row">
-            {% for listing in listings %}
+
                 <div class="col-md-8 offset-md-2">
                   <div class="card my-3">
                     <div class="card-body">

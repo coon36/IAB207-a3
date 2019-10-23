@@ -28,13 +28,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">My Listings</a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="/manageall">Your Listings</a>
-                            <a class="dropdown-item" href="/sellerhistory">Transaction History</a>
-                        </div>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/create">Create New Listing</a>
                       </li>
@@ -71,37 +64,57 @@
                 <div class="dropdown" style="margin-right: 15px">
                     <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">Game Condition</button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/results/condition_id=Preowned">Preowned</a>
                     <a class="dropdown-item" href="/results/condition_id=New">New</a>
+                    <a class="dropdown-item" href="/results/condition_id=Preowned">Preowned</a>
                     </div>
                   </div>
                   <div class="dropdown" style="margin-right: 15px">
-                    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">Game Rating</button>
+                    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">Classification</button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/results/classification_id=G">G</a>
-                    <a class="dropdown-item" href="/results/classification_id=PG">PG</a>
-                    <a class="dropdown-item" href="/results/classification_id=M">M</a>
-                    <a class="dropdown-item" href="/results/classification_id=MA15+">MA15+</a>
+                            <a class="dropdown-item" href="/results/classification_id=Exempt">Exempt (E)</a>
+                    <a class="dropdown-item" href="/results/classification_id=General">General (G)</a>
+                    <a class="dropdown-item" href="/results/classification_id=Parental Guidance">Parental Guidance (PG)</a>
+                    <a class="dropdown-item" href="/results/classification_id=Mature">Mature (M)</a>
+                    <a class="dropdown-item" href="/results/classification_id=Mature Accompanied">Mature Accompanied (MA)</a>
+                    <a class="dropdown-item" href="/results/classification_id=Restricted">Restricted (R 18+)</a>
                     </div>
                   </div>
                   <div class="dropdown" style="margin-right: 15px">
                     <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">Platform</button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/results/platform_id=Playstation 4">Playstation 4</a>
-                    <a class="dropdown-item" href="/results/platform_id=Nintendo Switch">Nintendo Switch</a>
+                            <a class="dropdown-item" href="/results/platform_id=Arcade Systems">Arcade Systems</a>
+                            <a class="dropdown-item" href="/results/platform_id=Atari">Atari</a>
+                            <a class="dropdown-item" href="/results/platform_id=Commodore 64">Commodore 64</a>
+                            <a class="dropdown-item" href="/results/platform_id=Nintendo">Nintendo</a>
+                            <a class="dropdown-item" href="/results/platform_id=Nintendo 3DS">Nintendo 3DS</a>
+                            <a class="dropdown-item" href="/results/platform_id=Nintendo DS">Nintendo DS</a>
+                            <a class="dropdown-item" href="/results/platform_id=Nintendo Switch">Nintendo Switch</a>
+                            <a class="dropdown-item" href="/results/platform_id=Nintendo Wii">Nintendo Wii</a>
+                            <a class="dropdown-item" href="/results/platform_id=Nintendo Wii U">Nintendo Wii U</a>
+                            <a class="dropdown-item" href="/results/platform_id=PC">PC</a> 
+                            <a class="dropdown-item" href="/results/platform_id=Playstation 3">Playstation 3</a>   
+                            <a class="dropdown-item" href="/results/platform_id=Playstation 4">Playstation 4</a>
+                            <a class="dropdown-item" href="/results/platform_id=Playstation Classic">Playstation Classic</a>
+                            <a class="dropdown-item" href="/results/platform_id=Playstation Vita">Playstation Vita</a>
+                            <a class="dropdown-item" href="/results/platform_id=SEGA">SEGA</a>
+                            <a class="dropdown-item" href="/results/platform_id=Xbox 360">Xbox 360</a>
                     <a class="dropdown-item" href="/results/platform_id=Xbox One">Xbox One</a>
-                    <a class="dropdown-item" href="/results/platform_id=PC">PC</a>
-                    <a class="dropdown-item" href="/results/platform_id=Nintendo 3DS">Nintendo 3DS</a>
-                    </div>
+           
+                </div>
                   </div>
                   <div class="dropdown" style="margin-right: 15px">
                     <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">Genre</button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/results/genre_id=Role Playing">Role Playing</a>
-                    <a class="dropdown-item" href="/results/genre_id=Fighting">Fighting</a>
-                    <a class="dropdown-item" href="/results/genre_id=Shooter">Shooter</a>
-                    <a class="dropdown-item" href="/results/genre_id=Online">Online</a>
-                    <a class="dropdown-item" href="/results/genre_id=Adventure">Adventure</a>
+                            <a class="dropdown-item" href="/results/genre_id=Action">Action</a>
+                            <a class="dropdown-item" href="/results/genre_id=Action-Adventure">Action-Adventure</a>
+                            <a class="dropdown-item" href="/results/genre_id=Adventure">Adventure</a>
+                            <a class="dropdown-item" href="/results/genre_id=Casual">Casual</a>
+                            <a class="dropdown-item" href="/results/genre_id=Party">Party</a>
+                            <a class="dropdown-item" href="/results/genre_id=Role Playing">Role Playing</a>
+                            <a class="dropdown-item" href="/results/genre_id=Simulation">Simulation</a>
+                            <a class="dropdown-item" href="/results/genre_id=Strategy">Strategy</a>
+                            <a class="dropdown-item" href="/results/genre_id=Sports">Sports</a>
+                            <a class="dropdown-item" href="/results/genre_id=MMO">MMO</a>
                     </div>
                   </div>
                 </div>
