@@ -1,0 +1,118 @@
+.jumbotron {
+    background-image: url('Images/heroimage.png');
+    background-size: cover;
+    background-position: center top;
+    margin-bottom: 0px;
+}
+
+.navbar .dropdown-menu {
+    background-color: #ffc107;
+    color: #6c757d;
+}
+
+.navbar .dropdown-menu > a:hover {
+color:  #6c757d;
+text-decoration: none;
+background-color: #ffc107;
+}
+
+.dropdown-menu {
+background-color:#ffbb33;
+}
+
+.navbar {
+    padding: 0px;
+}
+
+.form-control-underlined {
+border-width: 0;
+border-bottom-width: 1px;
+border-radius: 0;
+padding-left: 0;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.utilityLinks {
+text-decoration: none;
+align-items: center;
+text-align: center;
+padding-left: 15px;
+}
+
+.custom-scrollbar {
+  position: relative;
+  max-height: 600px;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.bidSelectionButtons {
+    text-align: center;
+}
+
+.postButtons {
+    text-align: center;
+}
+
+.bidButton {
+    display: inline-block;
+}
+
+
+[submit-value= "b123"] {
+    background-color: green !important;
+    color:white !important;
+    text-align: center !important;
+}
+
+[submit2-value= "b888"] {
+    background-color: green !important;
+    color:white !important;
+    text-align: center !important;
+}
+
+[cancel2-value= "b999"] {
+    background-color: red!important;
+    color:white !important;
+    text-align: center !important;
+}
+
+
+
+
+.navbar .dropdown-toggle, .navbar .dropdown-menu a {
+    cursor: pointer;
+}
+
+.navbar .dropdown-item.active, .navbar .dropdown-item:active {
+    color: inherit;
+    text-decoration: none;
+    background-color: inherit;
+}
+
+.navbar .dropdown-item:focus, .navbar .dropdown-item:hover {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #f8f9fa;
+}
+
+@media (min-width: 767px) {
+    .navbar .dropdown-toggle:not(.nav-link)::after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: .5em;
+        vertical-align: 0;
+        border-bottom: .3em solid transparent;
+        border-top: .3em solid transparent;
+        border-left: .3em solid;
+    }
+}
