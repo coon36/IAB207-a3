@@ -16,6 +16,7 @@
                     <div class="col-12 px-5">
                         <h4 class="p-3 mb-0 text-center text-secondary bg-warning">Manage Listings</h4>
                         <div class="table-wrapper-scroll-y custom-scrollbar">
+                          {% if (listing is defined) and listing %}
                             <table class="table table-bordered table-striped mb-0">
                                 <thead class="text-secondary">
                                     <tr>
@@ -27,21 +28,24 @@
                                 </thead>
                                 <tbody>
                                     {% for s in listing %}
-                                      {% if s is none %}
-                                      <tr>
-                                        <td>No data.</td>
-                                      </tr>
-                                      {% else %}
                                         <tr>
                                             <td style="vertical-align:middle;">{{s.listing_title}}</td>
                                             <td style="vertical-align:middle;">{{s.date_posted}}</td>
                                             <td style="vertical-align:middle;">{{s.purchase_price}}</td>
                                             <td><a href="/manage/{{s.id}}" class ="btn btn-warning">Manage Listing</a></td>
                                         </tr>
-                                      {% endif %}
                                     {% endfor %}
                                 </tbody>
                             </table>
+                          {% else %}
+                            <table class="table table-bordered table-striped mb-0">
+                                <thead class="text-secondary">
+                                    <tr>
+                                        <th scope="col">No listings to manage yet!</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                          {% endif %}
                         </div>
                     </div>
                 </div>
