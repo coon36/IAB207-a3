@@ -36,8 +36,16 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/create">Create New Listing</a>
-                    </li>
+                        <a class="nav-link" href="/create">Create New Listing</a>
+                      </li>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/manageall">Manage Listings</a>
+                        </li>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/sellerhistory">Sales History</a>
+                            </li>
                     {% if current_user.is_authenticated %}
                     <a class="nav-item nav-link disabled text-muted" href="#">
                         <span>Welcome, {{ current_user.user_name }}</span></a>

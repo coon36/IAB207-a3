@@ -7,7 +7,7 @@
 <!-- Start of Jumbotron -->
 <div class="jumbotron jumbotron-fluid card card-image text-white text-center"
     style="background-image: url(../static/Images/heroimage.png);">
-    <h1 class="display-2">Create Listing</h1>
+    <h1 class="display-2">Create New Listing</h1>
 </div>
 <!-- End of Jumbotron -->
 
@@ -21,7 +21,7 @@
             <div class="mx-auto col-sm-12">
                 <div class="card border-warning">
                     <div class="card-header bg-warning border-warning">
-                        <h4 class="mb-0 text-center text-secondary">Create A New Listing</h4>
+                        <h4 class="mb-0 text-center text-secondary">Create New Listing</h4>
                     </div>
                     <div class="card-body">
                         <form action="" method="POST" role="form" class="form" enctype=multipart/form-data>
@@ -41,7 +41,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Price:</label>
                                 <div class="col-lg-9">
-                                    {{form.purchase_price(class="form-control", type="text", placeholder="Please enter price e.g. $50.00")}}
+                                    {{form.purchase_price(class="form-control", type="text", placeholder="Enter price here in the format of: $50.00 or $1,000.00")}}
                                     <ul>
                                     {% for error in form.purchase_price.errors %}
                                         <li style="color: red;">{{ error }}</li>

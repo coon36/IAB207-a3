@@ -6,7 +6,6 @@ class User(db.Model,UserMixin):
     __tablename__='Users' # good practice to specify table name
     id = db.Column(db.Integer, primary_key=True)
     account_creation_date = db.Column(db.Date, nullable=False)
-    profile_img_url = db.Column(db.String(60), nullable=False, default='default.jpg')
     user_name = db.Column(db.String(100), index=True, unique=True, nullable=False)
     email_id = db.Column(db.String(100), index=True, nullable=False)
     contact_number = db.Column(db.String(50), nullable=False)

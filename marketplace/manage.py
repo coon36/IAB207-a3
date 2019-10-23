@@ -14,11 +14,11 @@ def manage(id):
 
     bids = Bid.query.filter_by(listing_id=id).join(User, Bid.user_id==User.id).\
     add_columns(User.id, User.user_name, Bid.listing_id, Bid.contact_number,
-    Bid.date_of_bid).all()
+    Bid.date_of_bid, User.email_id).all()
 
     purchase = Transaction.query.filter_by(listing_id=id).join(User,
     Transaction.user_id==User.id).add_columns(User.id, User.user_name,
-    Transaction.id, Transaction.purchase_date).first()
+    Transaction.id, Transaction.purchase_date, User.email_id).first()
 
     selected = Transaction(purchase_date = date.today(), user_id = request.args.get('user_id'), listing_id = request.args.get('listing_id'))
     db.session.add(selected)

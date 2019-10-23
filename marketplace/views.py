@@ -77,6 +77,7 @@ def create():
         db.session.add(item)
 
         db.session.commit()
+        flash('Listing created!', 'success')
         return redirect(url_for('main.home'))
 
     return render_template('CreateListing.html', form = form)

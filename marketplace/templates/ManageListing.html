@@ -34,22 +34,25 @@
 
         <!-- Start of right side of Manage Listing page -->
         <div class="col-md-9">
+                <h4 class="p-3 mb-0 text-center text-secondary bg-warning">Manage Listing</h4>
             <div class="table-wrapper-scroll-y custom-scrollbar">
                 <table class="table table-bordered table-striped mb-0" style="overflow-x:scroll;">
                     <thead class="text-secondary">
                         <tr>
-                            <th scope="col">Username</th>
-                            <th scope="col">Phone Number</th>
                             <th scope="col">Date of Bid</th>
-                            <th scope="col">Select A Bid</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Email Address</th>
+                            <th scope="col">Contact Number</th>
+                            <th scope="col">Select Bid</th>
                         </tr>
                     </thead>
                     <tbody>
                       {% for bid in bids %}
                         <tr>
-                          <td style="vertical-align:middle;">{{bid.user_name}}</td>
-                          <td style="vertical-align:middle;">{{bid.contact_number}}</td>
                           <td style="vertical-align:middle;">{{bid.date_of_bid}}</td>
+                          <td style="vertical-align:middle;">{{bid.user_name}}</td>
+                          <td style="vertical-align:middle;">{{bid.email_id}}</td>
+                          <td style="vertical-align:middle;">{{bid.contact_number}}</td>
                           <td><a class ="btn btn-warning" href="/manage/{{listing.id}}?user_id={{bid.id}}&listing_id={{bid.listing_id}}">Select Bid</a></td>
                         </tr>
                       {% endfor %}
@@ -58,13 +61,7 @@
             </div>
         </div>
     </div>
-    <div class="bidSelectionButtons mt-5">
-        <button type="button" class="btn btn-success mr-1" data-toggle="modal"
-            data-target="#confirmationModal">
-            Confirm Bid Selection
-        </button>
-        <a href="#" class ="btn btn-danger" onclick="window.history.back();return false;">Back</a>
-    </div>
+    
     <br>
     <!-- End of right side of Manage Listing page -->
   {% else %}
@@ -110,27 +107,4 @@
 </section>
 <!-- End of right side of Manage Listing page -->
 
-<!-- Start of modal for confirming the selection of a bid -->
-<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
-    aria-labelledby="confirmationModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="confirmationModal">Confirm Bid Selection</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p class="text-center">Are you sure you want to accept []'s bid?</p>
-                <p class="text-center">This item will be marked as sold with the current date upon confirmation.</p>
-            </div>
-            <div class="modal-footer">
-                <a href="/" class="btn btn-success" role="button">Confirm Bid</a>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End of modal for confirming the selection of a bid -->
 {% endblock %}
