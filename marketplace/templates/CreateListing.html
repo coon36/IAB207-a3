@@ -86,18 +86,33 @@
                                 <label class="col-lg-3 col-form-label form-control-label">Genre:</label>
                                 <div class="col-lg-9">
                                     {{form.game_genre(class="SelectField form-control", placeholder="Enter description here")}}
+                                    <ul>
+                                            {% for error in form.game_genre.errors %}
+                                                <li style="color: red;">{{ error }}</li>
+                                            {% endfor %}
+                                            </ul>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Classification:</label>
                                 <div class="col-lg-9">
                                     {{form.game_classification(class="SelectField form-control")}}
+                                    <ul>
+                                            {% for error in form.game_classification.errors %}
+                                                <li style="color: red;">{{ error }}</li>
+                                            {% endfor %}
+                                            </ul>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Platform:</label>
                                 <div class="col-lg-9">
                                     {{form.game_platform(class="SelectField form-control")}}
+                                    <ul>
+                                            {% for error in form.game_platform.errors %}
+                                                <li style="color: red;">{{ error }}</li>
+                                            {% endfor %}
+                                            </ul>
                                 </div>
                             </div>
                             <div class="form-group row">
