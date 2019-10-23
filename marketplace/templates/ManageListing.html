@@ -33,35 +33,50 @@
         <!-- End of left side of Manage Listing page -->
 
         <!-- Start of right side of Manage Listing page -->
+      {% if (bids is defined) and bids %}
         <div class="col-md-9">
-                <h4 class="p-3 mb-0 text-center text-secondary bg-warning">Manage Listing</h4>
-            <div class="table-wrapper-scroll-y custom-scrollbar">
-                <table class="table table-bordered table-striped mb-0" style="overflow-x:scroll;">
-                    <thead class="text-secondary">
-                        <tr>
-                            <th scope="col">Date of Bid</th>
-                            <th scope="col">Username</th>
-                            <th scope="col">Email Address</th>
-                            <th scope="col">Contact Number</th>
-                            <th scope="col">Select Bid</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      {% for bid in bids %}
-                        <tr>
-                          <td style="vertical-align:middle;">{{bid.date_of_bid}}</td>
-                          <td style="vertical-align:middle;">{{bid.user_name}}</td>
-                          <td style="vertical-align:middle;">{{bid.email_id}}</td>
-                          <td style="vertical-align:middle;">{{bid.contact_number}}</td>
-                          <td><a class ="btn btn-warning" href="/manage/{{listing.id}}?user_id={{bid.id}}&listing_id={{bid.listing_id}}">Select Bid</a></td>
-                        </tr>
-                      {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+          <h4 class="p-3 mb-0 text-center text-secondary bg-warning">Manage Listing</h4>
+          <div class="table-wrapper-scroll-y custom-scrollbar">
+              <table class="table table-bordered table-striped mb-0" style="overflow-x:scroll;">
+                  <thead class="text-secondary">
+                      <tr>
+                          <th scope="col">Date of Bid</th>
+                          <th scope="col">Username</th>
+                          <th scope="col">Email Address</th>
+                          <th scope="col">Contact Number</th>
+                          <th scope="col">Select Bid</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {% for bid in bids %}
+                      <tr>
+                        <td style="vertical-align:middle;">{{bid.date_of_bid}}</td>
+                        <td style="vertical-align:middle;">{{bid.user_name}}</td>
+                        <td style="vertical-align:middle;">{{bid.email_id}}</td>
+                        <td style="vertical-align:middle;">{{bid.contact_number}}</td>
+                        <td><a class ="btn btn-warning" href="/manage/{{listing.id}}?user_id={{bid.id}}&listing_id={{bid.listing_id}}">Select Bid</a></td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+              </table>
+          </div>
         </div>
+      {% else %}
+        <div class="col-md-9">
+          <h4 class="p-3 mb-0 text-center text-secondary bg-warning">Manage Listing</h4>
+          <div class="table-wrapper-scroll-y custom-scrollbar">
+              <table class="table table-bordered table-striped mb-0" style="overflow-x:scroll;">
+                  <thead class="text-secondary">
+                      <tr>
+                          <th scope="col">No data available.</th>
+                      </tr>
+                  </thead>
+              </table>
+          </div>
+        </div>
+      {% endif %}
     </div>
-    
+
     <br>
     <!-- End of right side of Manage Listing page -->
   {% else %}
