@@ -40,3 +40,4 @@ def genre(game_genre):
     search_category = request.args.get('search_category')
     return render_template('result.html', listings=listings, search_category = search_category)
 
+ 
