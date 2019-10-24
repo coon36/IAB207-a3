@@ -60,10 +60,10 @@ class ItemCreationForm(FlaskForm):
     ('Strategy', 'Strategy'), ('Sports', 'Sports'), ('MMO', 'MMO')])
     game_classification = SelectField('Classification', choices=[(None, 'Please select game classification'), ('Exempt', 'Exempt (E)'), ('General', 'General (G)'), ('Parental Guidance', 'Parental Guidance (PG)'), ('Mature', 'Mature (M)'), ('Mature Accompanied', 'Mature Accompanied (MA)'), ('Restricted', 'Restricted (R 18+)')])
     game_platform = SelectField('Platform', validators=[InputRequired()], choices=[(None, 'Please select game platform'), ('Arcade Systems', 'Arcade Systems'), ('Atari', 'Atari'),
-    ('Commodore 64', 'Commodore 64'), ('Nintendo', 'Nintendo'), ('Nintendo 3DS', 'Nintendo 3DS'), ('Nintendo DS', 'Nintendo DS'),
+    ('Commodore 64', 'Commodore 64'), ('Nintendo', 'Nintendo'), ('Nintendo 64', 'Nintendo 64'), ('Nintendo 3DS', 'Nintendo 3DS'), ('Nintendo DS', 'Nintendo DS'),
     ('Nintendo Switch', 'Nintendo Switch'), ('Nintendo Wii', 'Nintendo Wii'), ('Nintendo Wii U', 'Nintendo Wii U'),  ('PC', 'PC'),
     ('Playstation 3', 'Playstation 3'), ('Playstation 4', 'Playstation 4'), ('Playstation Classic', 'Playstation Classic'), ('Playstation Vita', 'Playstation Vita'),
-    ('SEGA', 'SEGA'), ('Xbox 360', 'Xbox 360'), ('Xbox One', 'Xbox One')])
+    ('SEGA', 'SEGA'), ('Super Nintendo', 'Super Nintendo'), ('Xbox 360', 'Xbox 360'), ('Xbox One', 'Xbox One')])
     listing_img_url = FileField('Upload Image', validators=[FileRequired(message='Image can not be empty'),
                                             FileAllowed(ALLOWED_FILE, message='File with incorrect format provided. .png, .jpg, .JPG, .PNG, .bmp and .JPEG are the supported file formats.')])
     submit = SubmitField("Create Listing")
