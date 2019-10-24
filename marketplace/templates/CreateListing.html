@@ -41,7 +41,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label">Price:</label>
                                 <div class="col-lg-9">
-                                    {{form.purchase_price(class="form-control", type="text", placeholder="Enter price here in the format of: $50.00 or $1,000.00")}}
+                                    {{form.purchase_price(class="form-control", type="text", placeholder="Example: $50.00")}}
                                     <ul>
                                     {% for error in form.purchase_price.errors %}
                                         <li style="color: red;">{{ error }}</li>
