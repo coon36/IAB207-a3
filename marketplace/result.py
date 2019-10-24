@@ -10,7 +10,7 @@ bp = Blueprint('result', __name__, url_prefix='/results')
 def condition(game_condition):
     listings = Listing.query \
     .filter_by(game_condition=game_condition) \
-    .order_by(desc(Listing.date_posted)).all()
+    .order_by(desc(Listing.id)).all()
     search_category = request.args.get('search_category')
     print(search_category)
     return render_template('result.html', listings=listings, search_category = search_category)
@@ -20,7 +20,7 @@ def condition(game_condition):
 def classification(game_classification):
     listings = Listing.query \
     .filter_by(game_classification=game_classification) \
-    .order_by(desc(Listing.date_posted)).all()
+    .order_by(desc(Listing.id)).all()
     search_category = request.args.get('search_category')
     return render_template('result.html', listings=listings, search_category = search_category)
 
@@ -28,7 +28,7 @@ def classification(game_classification):
 def platform(game_platform):
     listings = Listing.query \
     .filter_by(game_platform=game_platform) \
-    .order_by(desc(Listing.date_posted)).all()
+    .order_by(desc(Listing.id)).all()
     search_category = request.args.get('search_category')
     return render_template('result.html', listings=listings, search_category = search_category)
 
@@ -36,8 +36,6 @@ def platform(game_platform):
 def genre(game_genre):
     listings = Listing.query \
     .filter_by(game_genre=game_genre) \
-    .order_by(desc(Listing.date_posted)).all()
+    .order_by(desc(Listing.id)).all()
     search_category = request.args.get('search_category')
     return render_template('result.html', listings=listings, search_category = search_category)
-
- 
