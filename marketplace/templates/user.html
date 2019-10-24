@@ -1,25 +1,25 @@
-{% extends 'base.html' %}
+<!-- Login/Register page. -->
 
+{% extends 'base.html' %}
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block header %}
-  <div class="jumbotron jumbotron-fluid card card-image text-white text-center"
-      style="background-image: url(../static/Images/heroimage.png);">
+  <!-- Jumbotron. -->
+  <div class="jumbotron jumbotron-fluid card card-image text-white text-center" style="background-image: url(../static/Images/heroimage.png);">
       <h1 class="display-2">{{heading}}</h1>
   </div>
 {% endblock %}
 
 {% block content %}
-<div class="col-md-8 offset-md-2">
-  <h1 class="title text-secondary text-center pt-3" style="text-align:center">{{ heading }}</h1>
+  <div class="col-md-8 offset-md-2">
+    <h1 class="title text-secondary text-center pt-3" style="text-align:center">{{ heading }}</h1>
+    <!-- Form. -->
+    {{wtf.quick_form(form)}}
 
-  <!-- Form rendering is simple and easy if using bootstrap -->
-      {{wtf.quick_form(form)}}
-
-  <!-- When you have login form, then do show the user a link to register -->
-  {% if heading|lower =='login' %}
-        <br>
-        <p class= text-center>New user? <br> <a href="{{ url_for('auth.register') }}">Click here to register</a>.</p>
-    </div>
-  {% endif %}
+    <!-- Links to the registration page if on the login page. -->
+    {% if heading|lower =='login' %}
+      <br>
+      <p class= text-center>New user? <br> <a href="{{ url_for('auth.register') }}">Click here to register</a>.</p>
+    {% endif %}
+  </div>
 {% endblock %}
