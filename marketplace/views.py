@@ -12,7 +12,7 @@ bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def home():
-    listings = Listing.query.order_by(desc(Listing.date_posted)).limit(8).all()
+    listings = Listing.query.order_by(desc(Listing.date_posted), desc(Listing.id)).limit(8).all()
     # game1 = Listing(listing_title = "Hello", purchase_price = "$74.00",
     # game_platform = "XBOX")
     # game2 = Listing(listing_title = "Hello2", purchase_price = "$74.00",
@@ -20,7 +20,8 @@ def home():
     # game3 = Listing(listing_title = "Hello3", purchase_price = "$74.00",
     # game_platform = "XBOX")
     # my_list = [game1, game2, game3]
-    flash("Welcome to Australia's newest peer-to-peer marketplace. Register or log-in now to unlock the full potential of Gamerverse!", 'warning')
+    if not current_user.is_authenticated:
+        flash("Welcome to Australia's newest peer-to-peer marketplace. Register or log in now to unlock the full potential of Gamerverse!", 'warning')
     return render_template('Homepage.html', listings = listings)
 
 
