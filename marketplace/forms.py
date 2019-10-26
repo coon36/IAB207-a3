@@ -1,4 +1,4 @@
-
+# Form-related classes.
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordField, IntegerField, FloatField, FormField
@@ -8,11 +8,6 @@ from wtforms.fields.html5 import DateField
 from wtforms.widgets import TextArea
 
 class PhoneDetails(FlaskForm):
-
-    # def length_check(form, field):
-    #     if str(field.data) != 10:
-    #         raise ValidationError('Please enter contact number with exactly 10 numbers.')
-    # number = IntegerField("Contact Number", validators=[length_check])
     regex = "^\(?(?:\+?61|0)(?:(?:2\)?[ -]?(?:3[ -]?[38]|[46-9][ -]?[0-9]|5[ -]?[0-35-9])|3\)?(?:4[ -]?[0-57-9]|[57-9][ -]?[0-9]|6[ -]?[1-67])|7\)?[ -]?(?:[2-4][ -]?[0-9]|5[ -]?[2-7]|7[ -]?6)|8\)?[ -]?(?:5[ -]?[1-4]|6[ -]?[0-8]|[7-9][ -]?[0-9]))(?:[ -]?[0-9]){6}|4\)?[ -]?(?:(?:[01][ -]?[0-9]|2[ -]?[0-57-9]|3[ -]?[1-9]|4[ -]?[7-9]|5[ -]?[018])[ -]?[0-9]|3[ -]?0[ -]?[0-5])(?:[ -]?[0-9]){5})$"
     number = StringField("Contact Number", validators=[Regexp(regex, message="Please enter a valid Australian phone number."), InputRequired('Please enter a contact number.')])
 
@@ -22,31 +17,28 @@ class AccountDetails(FlaskForm):
     email_id = StringField("Email Address", validators=[Email("Please enter a valid email address."), InputRequired('Please enter an email address.')])
 
 class PasswordDetails(FlaskForm):
-    #linking two fields - password should be equal to data entered in confirm
+    # Linking two fields - password should be equal to data entered in confirmation field.
     password = PasswordField("Password", validators=[InputRequired('Please enter a password.'),
     EqualTo('confirm', message="Passwords should match.")])
     confirm = PasswordField("Please confirm your password", validators=[InputRequired('Please confirm your password.')])
 
-#login form
+# Login form.
 class LoginForm(FlaskForm):
     user_name = StringField("Username", validators=[InputRequired('Please enter your username.')])
     password = PasswordField("Password", validators=[InputRequired('Please enter your password.')], render_kw={"a-value" : "b123"})
     submit = SubmitField("Login", render_kw={"submit-value" : "b123"})
 
-#registration form
+# Registration form.
 class RegisterForm(FlaskForm):
     account_details = FormField(AccountDetails)
     mobile_phone = FormField(PhoneDetails)
     password = FormField(PasswordDetails)
-    #submit button
+    # Submit button.
     submit = SubmitField("Register", render_kw={"submit2-value" : "b888"})
 
 
-
-
-
+# Item creation form.
 ALLOWED_FILE = {'png', 'jpg', 'JPG', 'PNG', 'bmp', 'JPEG'}
-
 class ItemCreationForm(FlaskForm):
     Currency = "^\$(?!0\.00)\d{1,3}(,\d{3})*(\.\d\d)?$"
     listing_title = StringField('Listing Title', validators=[InputRequired()])
