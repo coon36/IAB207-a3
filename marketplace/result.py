@@ -45,3 +45,4 @@ def genre(game_genre):
     .order_by(desc(Listing.id)).all()
     search_category = request.args.get('search_category')
     return render_template('result.html', listings=listings, search_category = search_category)
+
