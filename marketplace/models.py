@@ -13,7 +13,7 @@ class User(db.Model,UserMixin):
     user_name = db.Column(db.String(100), index=True, unique=True, nullable=False)
     email_id = db.Column(db.String(100), index=True, nullable=False)
     contact_number = db.Column(db.String(50), nullable=False)
-	# Password is never stored in the DB, an encrypted password is stored.
+	# Password is never stored in the DB, an hashed password is stored.
     password_hash = db.Column(db.String(255), nullable=False)
 
     # Foreign keys.
